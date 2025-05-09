@@ -1,0 +1,29 @@
+package com.korea.servlet;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet{			
+	
+	public MyServlet() {					// 생성자
+		 super();							// HttpServlet
+		 System.out.println("MyServlet Created");
+	}
+	
+	// GET 방식으로 호출하면 반드시 doGet(HttpServlet이 가지고있는 함수)이 호출됨
+	protected void doGet(HttpServletRequest request,
+						 HttpServletResponse response)
+	throws ServletException, IOException {
+		System.out.println("[MyServlet] Get Called");
+		
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+	}
+	
+}

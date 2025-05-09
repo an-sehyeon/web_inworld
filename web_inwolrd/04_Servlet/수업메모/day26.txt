@@ -1,0 +1,54 @@
+https://us06web.zoom.us/rec/share/hugvPIviMJrJ-ThsNMYRVvpZr2T4AyIFaobAMLgbkMi-RQGqiqJXxq3NwQdWoS-J.Wk9EEIDqOAB4xtfw
+X6t^SS5Q
+
+
+1. JSP(Cont'd)
+    (2) 디렉티브 태그(Directive Tag)
+        - <%@ page ~ %> : <%와 @ 사이에는 공백이 없어야 함
+        - 현재 jsp의 정보 설정
+        - 일반적으로 페이지의 최상단에 위치
+
+        속성(기본값)
+        1) language(java) : 현재 jsp가 사용할 언어
+        2) contentType(text/html) : 현재 jsp가 생성할 문서 유형
+        3) pageEncoding(ISO-8859-1) : 페이지의 인코딩 설정
+        4) import : 현재 jsp에서 사용할 자바 패키지, 클래스 설정
+        5) sesseion(true) : 현재 jsp에서 세션 사용여부 결정
+        6) info : 현재 jsp에 대한 설명
+        7) errorPage : 현재 jsp에서 오류가 발생할 경우 이동할 페이지
+
+    (3) 인클루드 태그(include tag)
+        - <%@ include file="파일경로" %>
+
+        - 현재 jsp의 영역에 외부 파일의 내용을 포함하는 태그
+        - 가장 많이 쓰이는 것은 header, footer
+        - 대부분의 페이지에서 동일하므로 유지보수 + 편의성을 위해 외부 파일로 만든 후 include
+        => 모듈화
+
+        * 모듈화 : 1회성이 아닌 재사용 목적으로 구성하는 것
+
+
+2. 액션 태그(Action Tag)
+    - 서버나 클라이언트에게 어떤 행동을 하라고 명령하는 태그
+    - 페이지와 페이지 사이를 연결하거나 다른 페이지의 내용을 현재 페이지에 포함하거나,
+    - 자바빈즈(JavaBeans) 등의 다양한 기능을 제공
+    - 액션 태그의 형식은 XML 형식 <jsp: />
+
+    1) forward
+        <jsp:forward    />
+        - 다른 페이지로의 이동
+
+    2) include
+        <jsp:include    />
+        - 외부 페이지의 내용 포함
+
+    3) param
+        <jsp:param  />
+        - 현재 페이지에서 다른 페이지로 데이터 전달
+
+    4) useBean
+        <jsp:useBean    />
+        - Java 파일에 있는 객체 가져오기(new 기본생성자())
+
+    5) setProperty
+        <jsp:setProperty    />

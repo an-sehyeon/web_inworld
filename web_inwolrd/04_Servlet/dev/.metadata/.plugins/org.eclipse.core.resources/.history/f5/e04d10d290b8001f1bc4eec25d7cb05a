@@ -1,0 +1,60 @@
+package com.korea.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/MyServlet")						// 서블릿의 URL 매핑을 "/MyServlet"으로 설정
+public class MyServlet extends HttpServlet{			
+	
+	// ANSI 색상 코드 정의
+	private final String RED = "\033[91m";		// 빨강
+	private final String GREEN = "\033[91m";	// 초록
+	private final String END = "\033[0m";		// 색깔 끝내기
+	
+	public MyServlet() {							// 생성자 : MyServlet이라는 서블릿이 만들어질 때 호출
+		 super();									// 부모클래스(HttpServlet)의 생성자도 함께 실행
+		 System.out.println("MyServlet Created");	// 서블릿이 만들어지면 콘솔에 해당 문자열 출력 
+	}
+	
+	// GET 방식으로 호출하면 반드시 doGet(HttpServlet이 가지고있는 함수)이 호출됨
+	protected void doGet(HttpServletRequest request,
+						 HttpServletResponse response)
+	throws ServletException, IOException {
+		
+		// 콘솔에 GET 요청이 들어왔음을 표시(빨간색으로)
+		System.out.println(GREEN + "[MyServlet] Get Called" + END);
+		
+		// 클라이언트에게 보낼 응답의 형식과 문자 인코딩 설정
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		
+		// HTML 형식으로 응답 내용 작성
+		out.println("<html><body>");
+		out.println("<h1>This page was made using Servlet(GET)</h1><hr>");
+		out.println("</body></html>");
+	}
+	
+	// post 방식으로 호출하면 반드시 doGet(HttpServlet이 가지고있는 함수)이 호출됨
+		protected void doPost(HttpServletRequest request,
+							 HttpServletResponse response)
+		throws ServletException, IOException {
+			
+			// 콘솔에 POST 요청이 들어왔음을 표시(초록색으로)
+			System.out.println(RED + "[MyServlet] Post Called" + END);
+			
+			// 클라이언트에게 보낼 응답의 형식과 문자 인코딩 설정
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			
+			out.println("<html><body>");
+			out.println("<h1>This page was made using Servlet(Post)</h1><hr>");
+			out.println("</body></html>");
+		}
+	
+}

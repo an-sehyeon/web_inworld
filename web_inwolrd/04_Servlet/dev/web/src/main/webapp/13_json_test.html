@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON Ajax Test</title>
+</head>
+<body>
+	<h1>JSON Ajax Test</h1>
+	<hr>
+	<table border="1">
+		<tr>
+			<td><h3>Realtime Search Ranking</h3></td>
+			<td eidth="40%"><div id="ranking">Keyword</div></td>
+		</tr>
+	</table>
+</body>
+<script>
+	var words = new Array();
+	var obj = "";
+	var ranking = document.getElementById("ranking");
+	
+	var hr = new XMLHttpRequest();
+	hr.open("GET", "13_json_data.json", true);
+	hr.send();
+	console.log("Send OK");
+	
+	hr.onreadystatechange = function(){
+		if(hr.readyState == 4 && hr.status == 200){			// 데이터를 다 읽었다면 코드 실행, 정상
+			// JSON -> Object : 무슨 함수 )이용? parse? stringify?
+			obj = JSON.parse(hr.responseText);
+			console.log(obj);
+			
+			for(let i=0; i<obj.search_word.length; i++){
+				words[i] = "[" + obj.search_word[i].rank + "]" + obj.search_word[i].name;
+			}
+			console.log(words);
+		}
+	}
+	
+	var count = 0;
+	setInterval(function(){
+		ranking.innerHTML = "<h3>" + words[count % words.length] + "</h3>"; 
+		count++;
+	}, 1000);
+	
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

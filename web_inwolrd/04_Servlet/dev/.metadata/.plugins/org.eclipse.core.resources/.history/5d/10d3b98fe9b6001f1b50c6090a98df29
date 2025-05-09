@@ -1,0 +1,13 @@
+package com.korea.servlet;
+
+
+
+@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet{			
+	
+	public MyServlet() {					// 생성자
+		 super();							// HttpServlet
+		 System.out.println("MyServlet Created");
+	}
+	
+}

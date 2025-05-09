@@ -1,0 +1,14 @@
+package com.korea.servlet;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet{
+	
+	public MyServlet() {					// 생성자
+		 super();
+		 System.out.print(false);
+	}
+	
+}
