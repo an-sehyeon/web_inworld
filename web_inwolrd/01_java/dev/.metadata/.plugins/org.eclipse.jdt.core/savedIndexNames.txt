@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+E:\web_inwold\01_java\dev\.metadata\.plugins\org.eclipse.jdt.core
+2060185999.index
+3222431452.index
+1865797976.index

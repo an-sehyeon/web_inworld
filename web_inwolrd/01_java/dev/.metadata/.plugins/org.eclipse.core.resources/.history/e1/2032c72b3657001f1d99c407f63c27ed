@@ -1,0 +1,26 @@
+package java01;
+
+public class 연산 {
+	public static void main(String[] args) {
+//		
+//		// 복합대입 연산자
+//		int a = 10;		// 변수 a를 10으로 초기화
+//		a += 10;		// a에 10을 더해주고 더해진 값을 a에 저장
+//		a -= 5;			// a에 5를 뻬주고 뺀 값을 a에 저장
+//		a *= 3;			// a에 3을 곱해주고 곱해진 값을 a에 저장
+//		System.out.println( "a= " + a);		// 결과값 == 45
+//		
+//		
+//	}
+//
+//}
+
+		// 비교연산자
+		int a = 100, b = 20;
+		System.out.println("A == B : " + (a = b));
+		System.out.println("A == B : " + (a == b));
+		System.out.println("A > B : " + (a > b));
+		System.out.println("A < B : " + (a < b));
+		System.out.println("A >= B : " + (a >= b));
+	}	
+}	

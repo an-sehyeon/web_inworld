@@ -1,0 +1,120 @@
+
+1. 인터페이스(Interface)
+
+    (1) 사전적 의미
+        - 하나의 시스템을 구성하는 두 개의 요소 또는 서로 다른 시스템 간의 
+          상호 작용을 이루는 경계
+          하드웨어/소프트웨어/조건/규약 등을 포괄적으로 칭함
+
+    (2) Java에서의 인터페이스 
+        - 프로그램과 프로그램을 연결하는 것
+        - 한 마디로 요약하면 [규제]
+        - 특정한 규약에 의해 개발하도록 하는 목적
+        - 클래스가 인터페이스를 이용하려면 "반드시" 인터페이스가 규정한 메서드들을 다 만들어야 함.
+        - 인터페이스의 메서드를 구현하지 않으면 컴파일 실패
+
+    (3) 왜 만들었을까?
+        - 계산기 프로그램 개발 프로젝트
+        - 계산기 클래스는 A 개발자가 개발
+        - 응용 프로그램 클래스는 B 개발자가 개발
+
+        - 동시에 개발을 하다보니 B는 A가 개발할 모습을 예측하여 개발 진행
+        - 그런데 나중에 통합테스트때 보니...
+        - A는 add(a, b) 라고 개발했는데,
+        - B는 add(a[]) 라고 개발을
+        => 폭망
+        => Tomas Wujec : Build a Tower, Build a team    
+
+    (4) 사용법
+        [public] interface 인터페이스명 {
+            [public][static][final] 자료형 상수명 = 값;
+
+            [public] 리턴타입 메서드명(인자);
+
+            [public] default 리턴타입 메서드명(인자){
+                메서드 내용;
+            }
+
+            [public] static 리턴타입 메서드명(인자){
+                메서드 내용;
+            }
+        }
+
+        class 클래스명 implements 인터페이스명{
+
+        }
+
+        * 클래스 생성 시 가장 복잡한 형태
+        class 클래스명 extends 부모 implements 인터1, 인터2, ....
+        throws Exception{
+
+        }
+
+    (5) 예제
+        interface Interface1{
+            publi void myMethod1();
+        }
+
+        class Class1 implements Interface1{
+            public void myMethod1(){
+
+            }
+        }
+
+    (6) 인터페이스의 특징
+        - 상속과 구현은 완전히 다르다.
+        - 상속은 부모 클래스의 기능을 자식이 물려받는 것
+        - 구현은 자식이 반드시 만들도록 강제
+
+        - 클래스 선언은 class
+        - 인터페이스 선언은 interface
+        - 클래스 상속은 extends
+        - 인터페이스 구현은 implements
+
+    (7) 인터페이스 구현 특이사항
+        1) 하나의 클래스가 여러 인터페이스 구현 가능
+            interface I1 { void x(); }
+            interface I1 { void y(); }
+            class C1 implements I1, I2{
+                void x(){   }
+                void y(){   }
+            }
+
+        2) 인터페이스도 상속이 된다.
+            interface I3 { void x(); }
+            interface I4 extends I3 {
+                void y();
+            } 
+            class C2 implements I4 {
+                void x(){    }
+                void y(){    }
+            }
+
+   => CalculatorI.java, Calculator.java, CalApp.java 
+
+
+   (8) HeadAches
+        1) default, static : Java8 부터 만들어짐
+        2) default : 메서드를 인터페이스가 만듬
+           static : 구현한 클래스의 객체화 없이 호출 가능
+        3) default와 static는 왜 만들어졌을까?
+            * 예) 메서드 선언이 600개가 있던 인터페이스
+                  많은 기업들이 이를 가지고 구축 완료
+                  Java가 업데이트가 되면서 400개 메서드 추가
+                  => 아무도 업데이트 안함
+                  => 개발 끝나고 이미 운영 중 
+                  => 불만도 없고 인력도 없고 => 개발 안함
+                  => 400개의 메서드를 java 회사가 만듬
+                  => 바꿀려면 바꿀 수 있음
+
+    (9) 인터페이스의 사용
+        - 클래스와의 사용 불분명(모호함)으로 혼란
+        Spring에서 부활함
+            Spring에서는 java와 sql(mapper) 역할 분리
+            java에서는 인터페이스를 만들고 메서드 이름 부여
+            sql xm1에서 이름에 매핑되는 SQL을 작성함
+            => Java에서는 구현하지 않았기 때문에
+                interface의 기본 사상에 완벽하게 맞음
+
+    => MyInterface.java, MyClass.java, InterMain.java
+

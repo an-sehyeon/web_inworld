@@ -1,0 +1,56 @@
+
+
+
+
+package day01;
+
+interface Remorcon1 {
+    void turnOn();
+    void turnOff();
+}
+
+class Tv implements Remorcon1 {
+
+    @Override
+    public void turnOn() {
+        System.out.println("TV를 켭니다.");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("TV를 끕니다.");
+    }
+}
+
+class SmartTv extends Tv {
+    public void search(String url) {
+        System.out.println(url + "로 페이지를 이동하겠습니다.");
+    }
+}
+
+public class Welcome {
+
+    public static void turnOn(Remorcon1 control) {
+        control.turnOn();
+    }
+
+    public static void turnOff(Remorcon1 control) {
+        control.turnOff();
+    }
+
+    public static void search(Tv tv, String url) {
+        if (tv instanceof SmartTv) {
+            ((SmartTv) tv).search(url);
+        } else {
+            System.out.println("This TV does not support search functionality.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Tv tv = new Tv();
+        SmartTv stv = new SmartTv();
+        tv.turnOn();
+        tv.turnOff();
+        stv.search("www.naver.com");
+    }
+}

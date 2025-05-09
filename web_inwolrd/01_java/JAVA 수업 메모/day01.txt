@@ -1,0 +1,42 @@
+Day 1
+
+vs code 무설치 버전 다운로드
+visual studio code -> download -> (windows -> .zip -> x64) 클릭 
+
+data(빈폴더) 폴더를 만드는 이유 : 남과 환경을 공유하지 않기 위해서
+EX) 공용 컴퓨터로 사용할때
+
+
+
+1. JAVA란 무엇인가?
+(1) 3대 프로그래밍 언어 중 하나
+    C, JAVA, Python, (Javascript)
+
+    C : 속도, 하드웨어
+    JAVA : 배포, 코드 재사용성, 웹
+    Python : 쉬움, 다른 사람의 소스코드를 참조하기 편함
+
+(2) 1991년 제임스 고슬링이 개발
+    최초 이름 : OAA -> JAVA
+    개발 목적 : 가전제품용 소형 OS
+
+(3) 웹 어플리케이션의 발전에 따라 널리 퍼지게 됨
+
+(4) 같은 코드로 어느 시스템이든 사용가능
+    Code Once, Run Everywhere
+    - JVM (Java Virtual Machine)이 설치된 곳이라면 어디에서나
+
+(5) 대표적인 객체지향언어로 웹 프로그램의 대명사
+ ㅡ 
+[Compile 방식 vs Interpreter 방식]
+
+compile : 기계어로 변환 > 실행          
+    EX) C, java
+
+Interpreter : 매 줄(기본 단위)마다 기계어로 변환
+                오류나기 전 줄까지는 실행됨
+                EX) Python, Javascript
+
+2. Java 설치 : standalone(무설치) 버전으로 설치
+jdk21 -> windows -> x64 compressed Archive -> 185.84MB 
+eclipse -> Download Packages -> Eclipse IDE for java Developers -> download

@@ -1,0 +1,76 @@
+
+0. 복습
+    Welcome.java -> 설계도 작성 완료
+    Compile : javac Welcome.java > Welcome.class
+    Run : java Welcom -> Welcome에 있는 static main을 불러주세요
+
+
+1. 클래스의 구조
+
+    (1) 필드(Field)
+        클래스가 가지고 있는 변수
+        클래스 함수 내에서 생성한 변수는 아님
+        멤버 변수(member variable)
+
+    (2) 메서드(Method)
+        함수인데, 클래스 소속의 함수
+        멤버 함수(member Function)
+
+    (3) 생성자(Constructor)
+        클래스가 객체(제품)로 만들어질 때 반드시 실행되는 메서드
+        
+        클래스가 객체로 만들어질 때 반드시 해야될 일
+        ex) 필드 초기화, 데이터베이스 접속, 객체 수 현황 증가
+
+* 클래스 탄생 히스토리
+    변수 : 하나의 값만 저장
+    배열 : 여러 개의 값을 저장
+    구조체(struct) : 여러 종류의 값을 저장
+                    typedef{
+                        int age;
+                        char* name;
+                    } man;
+                    man man1, man man2;
+                    man1.age = 900;
+                    man1.name = "Abraham";
+    클래스 : 여러 종류의 값 뿐 아니라 여러 형태의 함수(메서드) 보유
+            여러 형태의 함수(메서드) 보유
+
+            class man{
+                String name;
+                int age;
+                void introduce(){
+                    System.out.println("제 이름은)
+                }
+            }
+            man man1 = new man();
+            man1.name = "신유빈";
+            man1.age = 20;
+            man1.introduce();
+
+
+2. 필드(Field)
+    - 클래스 내에는 3가지의 변수 타입이 존재
+    
+    1) 클래스 변수, 2) 인스턴스 변수, 3) 로컬 변수
+    - 이 중 1)과 2)를 Field라고 함.
+
+
+
+    (1) 클래스 변수
+
+        - 모든 객체가 공유하는 변수
+        - 변수 앞에 static 키워드 사용
+        - 객체 생성 없이도 사용 가능(클래스명.변수명)
+
+    (2) 인스턴스 변수
+        객체가 가지고 있는 변수
+        인스턴스 = 객체
+        ex) 트럭은 객체입니다.
+            트럭은 자동차의 인스턴스입니다.
+        변수 앞에 static 없음
+
+    (3) 로컬 변수
+        함수(메서드) 내에서 선언되었거나, 제어문 내에서 선언된 변수
+        함수 또는 제어문이 종료되면 사라진다.
+        

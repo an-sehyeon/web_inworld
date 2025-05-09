@@ -1,0 +1,54 @@
+
+1. 기본 클래스(Base Class)
+
+    (1) System
+        System.out.println("Hello World");
+
+        System s = new System();    (이렇게 안함)
+        - out은 System의 static 변수이다.
+        - in도 System의 static 변수이다.
+        println()
+
+
+        System.currentTimeMillis();
+            - 현재 시간을 밀리초 단위초 리턴
+            - 1970년 1월 1일 0시 0분 0초 기준
+
+            - 어디에 쓰나?
+                변수1 = System.currentTimeMillis();
+                나의 로직 수행
+                변수2 = System.currentTimeMillis();
+                변수2 - 변수1 = 나의 로직이 수행된 시간(ms)
+
+                => 수행시간 측정의 방법으로 많이 쓰임
+
+
+
+    (2) StringBuffer
+        - String은 값이 바뀔 때마다 새롭게 공간 할당
+        - StringBuffer는 새롭게 할당하지 않는다.
+        - String에서는 값을 비교하는 메서드인 equals가 있으나
+        - StringBuffer는 없음
+        - 대신에 String StringBuffer는 toString() 메서드가 존재
+        - toString() 수행 후 나온 String으로 equals 수행
+        - insert, delete, append 등이 가능
+
+
+
+    (3) Math
+        abs(값) : 절대값(양수는 그대로, 음수는 양수로)
+        ceil, floor : 올림, 내림
+                    ceil(3.4) => 4
+                    ceil(-3.4) => -3
+                    floor(3.4) => 3
+                    floor(-3.4) => -4
+
+        round(300.34) => 300
+        소수점 첫째 자리에서 반올림하기
+        => round(300.34, 1) : 일반적인 타 언어에서는 O
+                              Java는 이런 거없음
+        => 일단 10을 곱한다. => 3003.4
+        => round를 씌워준다. => 3003
+        => 다시 10을 나눈다. 300.3
+
+        min(a, b), max(a, b) : a, b 중 최소, 최대
