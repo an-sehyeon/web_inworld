@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>Watch Example</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+<body>
+    <h1>Watch를 통한 무슨 질문이든 받기</h1>
+    <hr>
+    <h2>Yes / No로 대답할 수 있는 질문을 해보십시오.</h2>
+    <div id="watch-ex">
+        <p><input type="text" v-model="question"></p>
+        <p>{{ answer }}</p>
+    </div>
+</body>
+<script>
+    var Qapp = new Vue({
+        el:'#watch-ex',
+        data:{
+            question:"",
+            answer:'물어봐야 답을하죠'
+        },
+        created:function(){
+            console.log("Created OK");
+            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500);
+        },
+        methods:{
+            getAnswer:function(){
+                if(this.question.indexOf('?') === -1){    // ?가 없다?
+                    this.answer = '?로 끝나야 대답합니다.';
+                    return     
+                }
+                this.answer = '좀만 기다려봐요';
+                
+                // 질문하는방법
+                var vm = this;
+                axios.get('https://yesno.wtf/api')
+                    .then(function(response){
+                        vm.answer = response.data.answer;
+                    })
+                    // 오류가 났다면?
+                    .catch(function(error){
+                        vm.answer = '오류났어요ㅠㅠ'
+                    });
+            }
+        },
+        watch: {
+            // 질문 변경 시 마다 이 부분이 실행됨
+            // 질문을 모니터링 하기 위해 question을 살펴보다 실행
+            question: function(){
+                console.log("질문바뀐것 감지");
+                this.answer = "열심히 입력하고 계시는군요";
+                this.debouncedGetAnswer();
+            }
+        }
+    });
+</script>
+</html>

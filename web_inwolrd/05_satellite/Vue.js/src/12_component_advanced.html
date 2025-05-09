@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>Component(Advanced)</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Component Advanced</h1>
+    <hr>
+    <div id="compdiv">
+        <app-header v-bind:propsdata="num"></app-header>
+        <app-content v-on:pass="deliverNum"></app-content>  <!-- pass 이벤트 발생시 deliverNum 호출 -->
+    </div>
+</body>
+<script>
+    var appHeader = {
+        template: '<div>header<button v-on:click="dispNum">출력</button></div>',
+        props: ['propsdata'],
+        methods: {
+            dispNum: function(){
+                console.log(this._props.propsdata);
+            }
+        }
+    }
+
+    var appContent = {
+        template: '<div>content <button v-on:click="passNum">전달</button></div>',
+        methods: {
+            passNum: function(){
+                this.$emit('pass', 100);        // 패스 이벤트가 발생하면 num을 100으로 변경
+            }
+        }
+    }
+
+    var app13 = new Vue({
+        el: '#compdiv',
+        components: {
+            'app-header': appHeader,
+            'app-content': appContent
+        },
+        data : {
+            num: 50
+        },
+        methods: {
+            deliverNum: function(val){
+                this.num = val;
+                console.log(this.num);
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,11 @@
+
+1. class 속성 변경하기
+    - class 속성의 특징 : 여러 개의 클래스를 중복해서 적용 가능
+    - v-vind:class={ 클래스명: 값, 클래스명2: 값2 }
+
+
+2. form 요소 활용하기
+    - form 요소와 데이터 간의 연결은 v-model로 양방향 바인딩
+    - text, <textarea>는 value 속성, input 이벤트
+    - checkbox, radio는 checked 속성, change 이벤트
+    - select는 value를 속성으로, change 이벤트

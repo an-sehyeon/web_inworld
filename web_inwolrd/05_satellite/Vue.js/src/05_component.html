@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Component</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Vue.js Componenets</h1>
+    <hr>
+    <div id="comp">
+        <ul>
+            <todo-item
+                v-for="cook in filteredCookList"
+                v-bind:todo="cook"
+                v-bind:key="cook.id">
+            </todo-item>
+        </ul>
+    </div>
+</body>
+<script>
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>오늘의 할 일({{ todo.id }}) : {{ todo.food }}</li>'
+    });
+
+    var app7 = new Vue({
+        el:'#comp',
+        data:{
+            cookList: [
+                {id:0, food: 'Ramen' },
+                {id:1, food: 'IceCream' },
+                {id:2, food: 'SandWitch' },
+                {id:3, food: 'Budae' },
+                {id:4, food: 'Wine' }
+            ]
+        },
+
+        computed:{                                                  // cookList의 배열의 id가 2보다 작은 id의 배열만 꺼냄
+            filteredCookList(){
+                return this.cookList.filter(cook=> cook.id < 2);
+            }
+        }
+    });
+</script>
+</html>

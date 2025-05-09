@@ -1,0 +1,45 @@
+
+1. Event Loop
+    - Event Emitter(이벤트 발생)
+    - Event Queue에 쌓임
+    - Event Loop(Observer) : Evnet Catch
+    - Event Handler에게 전달
+    
+    이벤트 발생 > 이벤트 감지 > 이벤트 실행
+
+    이벤트 방식의 Node.js 구조는 빠르다는 장점을 갖는다.
+
+
+2. http 모듈
+    - HTTP Protocol을 구현할 수 있는 Node.js의 가장 기본적인 웹 모듈
+    - HTTP Web Server 및 Client를 생성하는 모든 기능 담당
+    - 보유 객체
+        Server
+        response
+        request
+
+
+3. Express
+    - Node.js의 웹 프레임워크 중 하나
+    - 웹 프레임워크로는 Express, Koa, Hapi 등이 존재
+    - 디렉토리별로 역할을 분담하여 해당 기능을 수행
+        public : 정적요소(css, js)
+        router : 티켓 분배의 역할(ex login, buy)
+        views : HTML과 같은 사용자에게 보여줄 화면
+        server.js가 메인 기능을 수행
+    - 기술구조가 python의 대표적인 웹 프레임워크인 Flask과 유사
+
+
+4. Vue.js
+    - 가장 중요한 사용 이유 : SPA이기 때문
+        SPA : Single Page Application
+            페이지 접속 시 모든 리소스를 로드시켜 페이지 이동 또는 전환 발생 시
+            페이지 전체가 바뀌지 않고, 변경이 필요한 부분만 바뀌는 어플리케이션
+
+    - 보통 js 프레임워크의 대표주자는 jQuery
+    - 새롭게 부상하고 있는 프레임워크로 React, Angular, Vue.js가 있음
+
+    - Angular : TypeScript를 사용할 줄 알아야 함
+    - React : 기존 Javascript 문법을 많이 활용
+    - VUe.js : Vue 문법을 새롭게 익혀야 함
+        *) Vue 문법은 태그 위주, 코드가 짧음

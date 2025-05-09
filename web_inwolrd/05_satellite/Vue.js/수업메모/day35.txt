@@ -1,0 +1,51 @@
+
+1. Node.js를 이용한 Vue 웹 서버 기동하기
+    (1) Vue 프로젝트를 위한 디렉토리 생성
+        - cmd 또는 탐색기를 통해 디렉토리 생성
+        - vue/web 생성 : mkdir web
+        
+
+    (2) Vue 설치
+        - cmd에서 Vue 설치 : npm install vue
+
+    (3) Vue Cli 설치
+        - Vue Cli는 Vue 개발의 용이성을 위해 프로젝트를 생성할 수 있도록 해주는 도구
+        - 실행하면 프로젝트 디렉토리 구성 및 초기 파일들을 만들어주는 역할을 수행(환경 구성)
+
+        - cmd 에서 Vue Cli 설치 : npm install -g @vue/cli
+        => 다수의 패키지 설치(일정 시간 소요)
+
+
+    (4) Project 생성
+        - cmd에서 Project 생성 : vue create myproject1
+        (대문자 실행 불가)
+        => myproject1 디렉토리에 많은 파일과 서브 디렉토리가 생성
+        => Default Vue 3 선택
+
+    (5) 서버 구동
+        - cd myproject1
+        - npm run serve 실행 => 웹 서버 구동
+        - 서비스하는 포트로 localhost:서비스포트 수행
+        => Welcome 페이지가 나타나면 성공
+
+        vs 코드 세팅 = 파일 > 설정 > 설정 > File Associations > 항목 : *.vue    값 : html 입력 후 확인 
+
+    (6) Vue Router 설치
+        - cmd에서 vue add router
+
+
+2. Vue 파일 구성요소
+    (1) <template>
+        - Html 태그가 포함된 공간
+        <!-- -->을 통해 주석 처리 가능
+
+    (2) <script>
+        - script 코드가 들어가는 공간
+        - 이 스크립트 코드는 동일 파일의 <template>에만 동작
+        - import를 통해 다른 모듈이나 라이브러리 호출
+        - /* */ 또는 //를 통해 주석 처리 가능
+
+    (3) <style>
+        - 스타일 속성에 관한 css 코드가 위치하는 부분
+        - style은 원래 파일 간 중첩이 가능하지만, style scoped라는 속성을 이용해서
+          해당 <template>에만 적용되도록 설정 가능

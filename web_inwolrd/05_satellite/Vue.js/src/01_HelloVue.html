@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hello Vue!</title>
+</head>
+<!-- Vue.js 사용을 위한 CDN 활용 -->
+<!-- 개발 버전으로, 콘솔의 경고 등 포함 -->
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Hello Vue : First Vue Page</h1>
+    <hr>
+    <div id="hello">
+    <h2>나의 첫 메시지 : {{ message }}</h2>
+    <h2>나의 두 번째 메시지 : {{ message2 }}</h2>
+</div>
+<div id="dbind">
+    <span v-bind:title="message">여기에 마우스를 올리시면 현재 시간이 표시됩니다.</span>
+    <br>
+    <span :title="message">여기도 마찬가지입니다.</span>
+    <br>
+    <a :href="url">이동하시려면 하세요</a>
+</div>
+</body>
+<script>
+    var app1 = new Vue({
+        el: '#hello',
+        data: {
+            message: 'Vue, 난 아직 배고프다',
+            message2: '짜장면 먹고 싶다'
+        }
+    });
+
+    var app2 = new Vue({
+        el: '#dbind',
+        data: {
+            message: '현재 시간은 말이죠 ' + new Date() + "입니다.",
+            url: 'http://map.google.com'
+        }
+    });
+</script>
+</html>

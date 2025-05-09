@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Class ON/OFF</title>
+    <style>
+        .redfont{
+            color:red;
+        }
+        .boldfont{
+            font-weight: bold;
+        }
+        .bigfont{
+            font-size: 48px;
+        }
+    </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app8">
+        <p v-bind:class="titleOne">Title One</p>
+        <p v-bind:class="{ redfont: ron, boldfont: bon, bigfont: bion }">Test String</p>
+        <input type="checkbox" v-model="ron">빨간글자&nbsp;&nbsp;
+        <input type="checkbox" v-model="bon">굵은글자&nbsp;&nbsp;
+        <input type="checkbox" v-model="bion">큰글자&nbsp;&nbsp;
+        <p v-bind:class="{ redfont: 5>3? true:false }">Test String2</p>
+        <p v-bind:class="textcolor">I am a student</p>
+    </div>
+</body>
+<script>
+    var app8 = new Vue({
+        el: '#app8',
+        data: {
+            titleOne: 'bigfont boldfont',
+            ron: true,
+            bon: true,
+            bion: true
+        },
+        computed:{
+            textcolor:function(){
+                console.log("쟤가 갑자기 바꾸는데요?");
+                if(this.ron == true){
+                    return 'redfont';
+                }
+                else{
+                    return null;
+                }
+            }
+        }
+    });
+</script>
+</html>

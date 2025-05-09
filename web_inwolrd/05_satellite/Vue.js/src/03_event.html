@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Events</title>
+</head>
+<script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Vue.js Events</h1>
+    <hr>
+    <div id="eve">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMsg">Reverse</button>        <!-- 클릭 시 이벤트 발생 -->
+        <button @dblclick="reverseMsg">Reverse</button>         <!-- 더블 클릭 시 이벤트 발생 -->
+    </div>
+</body>
+<script>
+    var app5 = new Vue({
+        el:'#eve',
+        data:{
+            message: '아이돌 기획사간의 다툼'
+        },
+        methods: {
+            reverseMsg: function(){
+                this.message = this.message.split('').reverse().join('');
+            }
+        }
+    });
+</script>
+</html>
