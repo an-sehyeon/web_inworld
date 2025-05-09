@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+</head>
+<div th:replace="~{/include/header}"></div>
+<body>
+
+	<h1>Login Page</h1>
+	<hr>
+	<br><br><br><br><br><br><br><br>
+	
+	<div th:if="${id != 'anonymousUser'}">
+	    <h1 th:text="'환영합니다, ' + ${id} + '님!'"></h1>
+	    <p th:text="'권한: ' + ${role}"></p>
+	    <button onclick="location.href='/logout'">로그아웃</button>
+	</div>
+	
+	<form action="/loginProc" method="post" name="loginForm">
+		<input id="username" type="text" name="username" placeholder="id"/>
+		<input id="password" type="password" name="password" placeholder="password"/>
+		<input type="submit" value="login"/>
+	</form>
+	
+</body>
+</html>

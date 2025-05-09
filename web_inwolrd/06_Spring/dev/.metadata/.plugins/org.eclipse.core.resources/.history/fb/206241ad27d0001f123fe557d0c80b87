@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Read Article</title>
+</head>
+<body>
+	<h1 th:text="${vo.title}"></h1>
+	<hr>
+	<p th:text="${vo.title}"></p>
+	<p th:text="${vo.content}"></p>
+	<p>수정일 : [[${vo.writer}]]</p>
+	<p th:text="${vo.updatedate}"></p>
+</body>
+</html>

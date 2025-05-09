@@ -1,0 +1,9 @@
+package com.sehyeon.sychology.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sehyeon.sychology.entity.UserEntity;
+
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+
+}

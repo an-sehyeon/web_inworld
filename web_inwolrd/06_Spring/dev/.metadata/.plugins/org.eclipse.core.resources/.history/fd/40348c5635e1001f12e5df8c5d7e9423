@@ -1,0 +1,5 @@
+package com.sehyeon.sychology.repository;
+
+public interface UserRepository {
+
+}

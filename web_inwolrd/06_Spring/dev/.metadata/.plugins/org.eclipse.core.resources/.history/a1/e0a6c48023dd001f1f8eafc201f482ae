@@ -1,0 +1,90 @@
+package com.sehyeon.sportspsychology.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+import com.sehyeon.sportspsychology.service.LoginService;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfig {
+	
+	@Autowired
+	public SecurityConfig(@Qualifier("loginService") UserDetailsService loginService) {
+		this.loginService = (LoginService) loginService;
+	}
+
+	
+    private final LoginService loginService;
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+    
+    @Bean
+    public AuthenticationManager authManager(HttpSecurity http) throws Exception {
+    	return http.getSharedObject(AuthenticationManagerBuilder.class)
+    			.userDetailsService(loginService)		// loginService를 UserdetailsService로 설정
+    			.passwordEncoder(passwordEncoder()) 	// 비밀번호 암호화
+    			.and()
+    			.build();
+    }
+    
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    	http.csrf().disable().authorizeHttpRequests(auth -> auth
+    			.requestMatchers("/login", "/signup", "/resources/**").permitAll()
+    			.anyRequest().authenticated()
+		)
+		.formLogin(form -> form
+				.loginPage("/login")
+				.defaultSuccessUrl("/main")
+				.failureUrl("/login?error=true")
+				.permitAll()
+		)
+		.logout(logout -> logout
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/login?logout=true")
+				.invalidateHttpSession(true)
+				.deleteCookies("JSESSIONID")
+		);
+    	return http.build();
+    }
+
+
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+            .requestMatchers("/sportspsychology/admin/**").hasRole("ADMIN") // 관리자 페이지 접근
+            .requestMatchers("/sportspsychology/**").permitAll() // 모든 사용자 접근 허용
+            .anyRequest().authenticated()
+            .and()
+            .formLogin()
+            .loginPage("/sportspsychology/login") // 사용자 정의 로그인 페이지
+            .defaultSuccessUrl("/sportspsychology/main", true) // 로그인 성공 후 리다이렉트
+            .permitAll()
+            .and()
+            .logout()
+            .logoutUrl("/sportspsychology/logout") // 로그아웃 경로
+            .logoutSuccessUrl("/sportspsychology/login") // 로그아웃 성공 후 리다이렉트
+            .permitAll();
+    }
+
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(loginService).passwordEncoder(new BCryptPasswordEncoder());
+    }
+}
+ 

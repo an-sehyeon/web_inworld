@@ -1,0 +1,43 @@
+package com.koreait.board.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.koreait.board.bean.BoardVO;
+import com.koreait.board.dao.BoardDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@RequestMapping("/board/*")
+@Slf4j
+public class BoardController {
+	
+	@Autowired
+	private BoardDAO dao = new BoardDAO();
+	
+	// List
+	@GetMapping("list")
+	public void list(Model model) {
+		log.info("MyUtil.BLUE" + "------------------->" + "MyUtil.END");
+		log.info("Get List Called");
+		model.appAttribute("list", dao.getList());
+	}
+	
+	// register(글쓰기) 화면 호출용
+	@GetMapping("register")		// board 밑에 있는 register.html을 찾아감
+	public void register() {
+		
+	}
+	
+	// register(글쓰기) 처리용
+	@PostMapping("register")
+	public void write(BoardVO board) {
+		log.info("글 쓰는중 " + board);
+		log.info(dao.register(board) + "건 등록 완료");
+	}
+
+}

@@ -1,0 +1,20 @@
+day13
+
+https://us06web.zoom.us/rec/share/zvcuscnAhU3FwfTxW1dSRS2rG9sOzLi_yDH_8eunzoB2_OaMXoqd-yJpMFu2XL-z.mUuR6sdheez0kl5R
+%z854Rh0
+
+1. Attach
+    - 기존 파일 업로드의 문제점
+    1) 위협 공격에 대비한 확장자 제한 
+        -> js에서 확장자 4개 제한으로 해결
+
+    2) 동일 이름의 파일이 업로드되는 경우 기존 파일 overwrite
+        -> 연/월/일 폴더를 생성하고 copy
+
+    3) 폴더를 생성했음에도 중복되는 경우 overwrite
+            -> UUID 적용
+        * UUID(Universally Unique ID)
+        네트워크 상에서 각각의 개체들을 식별하기 위해서 사용
+        중복될 가능성이 없다고 보면 됨        
+
+        만,억,조,경,해,자,양,구,간 => 340간 분의 1 = UUID

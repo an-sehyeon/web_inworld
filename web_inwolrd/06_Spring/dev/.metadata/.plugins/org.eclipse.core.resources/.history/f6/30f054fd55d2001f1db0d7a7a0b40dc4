@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 연결할 인터페이스 정보를 namespace에 기술 -->
+<mapper namespace="com.koreait.board.mapper.AttachFileMapper">
+	<insert id="insert">
+		INSERT INTO TBL_ATTACH(FILENAME, UUID, UPLOADPATH, IMAGE, BNO)
+		VALUES (#{fileName}, #{uuid}, #{uploadPath}, #{image}, #{bno})
+	</insert>
+	
+</mapper>

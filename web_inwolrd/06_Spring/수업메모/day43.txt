@@ -1,0 +1,12 @@
+Day07
+
+1. board 테이블 생성
+    - TBL_BOARD
+    - SEQ_BOARD
+
+
+2. BoardVO 생성
+3. insert, insertSelectKey 구현
+4. getList 구현
+
+    

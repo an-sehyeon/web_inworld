@@ -1,0 +1,5 @@
+package com.koreait.board.dao;
+
+public class BoardDAO {
+
+}

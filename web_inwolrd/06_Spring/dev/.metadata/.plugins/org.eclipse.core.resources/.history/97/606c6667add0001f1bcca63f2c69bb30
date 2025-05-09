@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeliaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Board</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<style>
+		@media (max-width: 918px){	
+			.hide {
+				display: none;
+			}	
+		}
+	</style>
+</head>
+<body>
+	<h1 class="text-center" style="margin: 20px auto;">
+		Board List	
+		<input type="button" id="write" value="글쓰기">
+		<span class="btn btn-success" >글쓰기2</span>
+	</h1>
+	<hr>
+	<div class="col-md-8 text-center" style="margin: 0 auto;">
+	<table class="table table-striped table-dark">
+		<thead>
+			<tr>
+				<td class="hide">번호</td>
+				<td>제목</td>
+				<td>작성자</td>
+				<td>작성일</td>
+				<td class="hide">수정일</td>
+			</tr>
+		</thead>
+		<tbody>
+		<th:block th:each="board:${list}">
+			<tr th:object="${board}">
+				<td th:text="*{bno}"  class="hide"></td>
+				<td><a th:text="*{title}" th:href="@{/board/read(bno=*{bno})}"></a></td>
+				<td th:text="*{writer}"></td>
+				<td th:text="*{regdate}"></td>
+				<td th:text="*{updatedate}"  class="hide"></td>
+			</tr> 
+		</th:block>	
+		</tbody>
+	</table>
+	
+	<!-- 검색을 위한 기능 -->
+	<form method="get" action="/board/list">			
+		<div style="text-align: center">
+			<select name="type">
+				<option value="T">제목</option>
+				<option value="C">내용</option>
+				<option value="W">작성자</option>
+			</select>
+			<input type="text" id="keyword" name="keyword">
+			<input type="subnit" value="검색">
+		</div>
+	</form>
+	
+	
+	</div>
+</body>
+<script th:inline="javascript">			// javascript 내에 th문법이 들어갈 경우 해당 코드처럼 작성
+	var btn = document.getElementById("write");
+	var btn2 = document.querySelectorAll("span.btn")[0];
+	btn.addEventListener("click", function(){
+		// alert("Button Pressed");
+		location.href = "/board/register";
+	});
+
+	console.log("btn2 = " + btn2);
+	btn2.addEventListener("click", function(){
+		// alert("Button Pressed");
+		location.href = "/board/register";
+	});
+	
+	var msg = [[${msg}]];
+	if(msg){
+		alert(msg);
+	}
+	
+</script>
+</html>

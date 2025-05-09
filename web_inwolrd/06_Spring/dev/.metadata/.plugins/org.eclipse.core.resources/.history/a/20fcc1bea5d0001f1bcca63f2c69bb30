@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modify</title>
+<style>
+	/*input 태그에 대한 스타일 설정*/
+	input {
+			border-widtf:	0 0 3px 
+	}
+</style>
+</head>
+<body>
+	<p>제목 : <input type="text" th:field="${board.title}"></p>
+	<p>내용 : <input type="text" th:field="${board.content}"></p>
+	<p>저자 : <input type="text" th:field="${board.writer}"></p>
+</body>
+</html>

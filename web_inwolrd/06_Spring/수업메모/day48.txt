@@ -1,0 +1,15 @@
+day12
+
+https://us06web.zoom.us/rec/share/9MEAm27ZdgIlR7kTRuW6QvEr!qB&z47wefPsqVF23-a6TNDca-y0pO_7AhGsrokOYY2_Tyoj.KLimCW-iQmM_51w5
+r!qB&z47
+2.37.30
+
+1. File Upload 구현
+    (1) register.html에서 파일 입력이 가능하도록 기능 추가
+        => ajax 방식으로 구현
+
+    (2) UploadController 작성
+        => @ResponseBody를 사용하여 데이터로 리턴
+        => 여러 파일 수신 후 디렉토리로 copy
+            : application.properties에 multifile 설정 필요
+        => 파일이 이미지 타입인지의 여부를 판단하는 checkImageType Method 생성

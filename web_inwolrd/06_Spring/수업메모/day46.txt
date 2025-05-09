@@ -1,0 +1,14 @@
+Day10
+
+2. 글 상세보기 화면 구현 (특정 글번호가 왔을 때)
+    (1) BoardController : 특정 글번호 입력시 글 조회하는 read() 작성
+    (2) read.html 생성 -> 특정 글번호의 글 출력하는 페이지 생성
+
+
+3. 특정 글번호를 받아 해당 글번호의 게시글 삭제 기능 구현
+    (1) BoardDAO : remove() 작성
+    (2) BoardMapper : delete(), BoardMapper.xml : SQL 구현
+    (3) BoardController : RedirectView를 활용해 remove 후에 변경된 list.html로 이동하는 로직 구현
+                          register 실행 후 변경된 list.html로 이동하는 로직 구현  
+    (4) read.html : 특정 글번호의 글을 가져와 삭제하기 버튼 생성 + 버튼 클릭 시 변경된 list.html로 이동
+    (5) list.html : 제목 클릭 시 게시글로 이동하는 로직 구현(<a>태그 활용)

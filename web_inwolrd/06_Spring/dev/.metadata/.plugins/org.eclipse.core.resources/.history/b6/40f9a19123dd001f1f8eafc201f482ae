@@ -1,0 +1,36 @@
+package com.sehyeon.sportspsychology.service;
+
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.sehyeon.sportspsychology.bean.LoginVO;
+import com.sehyeon.sportspsychology.mapper.Loginmapper;
+
+import lombok.RequiredArgsConstructor;
+
+@Service("loginService")
+@RequiredArgsConstructor
+public class LoginService implements UserDetailsService {
+
+    private final Loginmapper loginmapper;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // 데이터베이스에서 사용자 정보 조회
+        LoginVO user = loginmapper.findByUsername(username);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + username);
+        }
+        
+        // UserDetails 객체 생성
+     	return org.springframework.security.core.userdetails.User.builder()
+        		.username(user.getUsername()).password(user.getPassword())		// 암호화된 비밀번호 사용
+        		.roles("USER")													// 역할 부여
+        		.build();
+    }
+ }

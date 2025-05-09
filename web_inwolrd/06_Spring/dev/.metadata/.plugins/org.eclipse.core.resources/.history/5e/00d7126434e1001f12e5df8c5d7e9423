@@ -1,0 +1,10 @@
+package com.sehyeon.sychology.service;
+
+@Service
+public class JoinService {
+	
+	public void joinProcess(JoinDTO joinDTO) {
+		
+	}
+
+}

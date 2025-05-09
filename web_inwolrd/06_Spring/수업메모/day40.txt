@@ -1,0 +1,24 @@
+Day04
+
+
+1. MyBatis
+    - 자바 퍼시스턴스 프레임워크의 하나
+        = 퍼시스턴스 프레임워크란 XML 서술자나 데이터의 저장/조회/변경/삭제를 다루는 클래스와 설정 집합
+    
+        - 어노테이션(annotation)이나 XML을 이용하여 저장 프로시저나 SQL문과 객체를 연결
+        - 아파치 라이선스 2.0 -> Free S/W
+
+
+2. MyBatis 사용 방법
+    - Config를 통해 Config, Driver, SessionFactiory 구성
+    - annotation 방식 또는 XML 방식의 활용
+        1) Annotation
+            @Select("SELECT 1 FROM DUAL")
+            public String getDual();
+
+        2) XML
+            public String getDual();
+
+            <select id="getDual">
+                SELECT 1 FROM DUAL
+            </select>

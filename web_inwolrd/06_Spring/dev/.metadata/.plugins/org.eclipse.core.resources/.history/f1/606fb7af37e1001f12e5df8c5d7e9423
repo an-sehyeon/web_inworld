@@ -1,0 +1,28 @@
+package com.sehyeon.sychology.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sehyeon.sychology.dto.JoinDTO;
+import com.sehyeon.sychology.entity.UserEntity;
+import com.sehyeon.sychology.repository.UserRepository;
+
+@Service
+public class JoinService {
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	public void joinProcess(JoinDTO joinDTO) {
+		
+		UserEntity data = new UserEntity();
+		
+		data.setUsername(joinDTO.getUsername());;
+		data.setPassword(joinDTO.getPassword());
+		data.setRole("ROLE_USER");
+		
+		
+		userRepository.save(data);
+	}
+
+}

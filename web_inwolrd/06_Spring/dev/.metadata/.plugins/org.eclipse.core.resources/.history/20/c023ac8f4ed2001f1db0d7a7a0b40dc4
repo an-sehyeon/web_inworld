@@ -1,0 +1,28 @@
+package com.koreait.board.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.koreait.board.bean.BoardVO;
+
+@Mapper
+public interface AttachFileMapper2 {
+	// 게시글 추가
+	public int insert(BoardVO vo);
+	public int insertSelectKey(BoardVO vo);  // bno 채번 결과를 vo에 담음
+	
+	// 게시글 리스트
+	public List<BoardVO> getList();
+	// 키워드가 들어왔을때 담당(검색 기능)
+	public List<BoardVO> getListWithKey(String type, String keyword);
+	
+	// 게시글 조회
+	public BoardVO get(Long bno);
+	
+	// 게시글 업데이트
+	public int update(BoardVO vo); 
+	
+	// 게시글 삭제
+	public int delete(Long bno);			 // 특정 bno 받으면 해당 게시글 삭제
+}

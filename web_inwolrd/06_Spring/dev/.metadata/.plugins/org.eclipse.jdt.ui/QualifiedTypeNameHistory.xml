@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.koreait.board.bean.BoardVO"/>
+    <fullyQualifiedTypeName name="com.koreait.board.util.MyUtil"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="org.springframework.data.annotation.Id"/>
+    <fullyQualifiedTypeName name="com.sehyeon.sportspsychology.model.User"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="com.sehyeon.sportspsychology.example.SecurityConfig"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.builders.HttpSecurity"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.context.SecurityContextHolder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
+    <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.javassist.bytecode.Descriptor.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+</qualifiedTypeNameHistroy>

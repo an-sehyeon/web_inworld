@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Write</title>
+</head>
+<body>
+	<h1>마음대로 글을 쓰셔도 될까요?</h1>
+	<hr>
+	<form action="/board/register" method="post">		<!-- board 밑에 register로 가는데 method는 post로 -->
+		<p>title : <input type="text" name="title"></p>
+		<p>content : <br><textarea name="content"></textarea></p>
+		<p>writer : <input type="text" name="writer"></p>
+		 
+		<!-- File Upload 기능 -->
+		<div class="uploadDiv">
+			<input type="file" name="uploadFile" multiple style="width:200px;">		<!-- multiple : 파일 여러개 선택 가능 -->
+		</div>
+		<div class="uploadResult">
+			<ul>
+			<!-- 
+				<li>File1</li>
+				<li>File2</li>
+			 -->	
+			</ul>
+		</div>
+		
+		<input type="submit" value="Register">
+	</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+	// type이 file인 input에 이벤트가 생길 시 수행하는 기능
+	$("input[type='file']").change(function(e){
+		// e.prevectDefault();		// 이벤트 발생 시 기본 기능을 막는 역할, ex) a 태그의 경우 이동안함, submit의 경우 제출안함
+		// alert("Change");
+		let inputFile = $("input[name='uploadFile']");		// name이 uploadFile인 input 태그를 변수 inputFile에 대입
+		let files = inputFile[0].files;
+		console.log(files);
+		
+		
+		// FormData를 이용하여 전송 데이터 생성
+		let formData = new FormData();
+		
+		for(let i=0; i<files.length; i++){							
+			if(checkFile(files[i].name, files[i].size) == false){	// name과 size를 가지고 검사 
+				alert("파일 업로드 실패");
+				return;												// faluse라면 X
+			}
+			
+			// 검사 결과 true라면 코드 실행
+			// formData에 추가한다.
+			formData.append("uploadFile", files[i]);		// formData에 "uploadFile"이라는 이름으로 추가
+			// alert("파일 추가 완료");
+		}
+		
+		console.log(formData);
+		
+		// 추가한 파일 데이터 전송
+		$.ajax({
+			url: "/upload/uploadAjaxAction",
+			processData: false,
+			contentType: false,
+			data: formData,
+			type: "POST",
+			success: function(result){		// 성공했다면? return값을 result에 저장
+				alert("File Upload Comleted");
+				console.log(result);
+				inputFile.val("");
+				showUploadFile(result);
+			},
+			error: function(error){
+				console.log("야 오류났어");
+				console.log(error);
+			}
+		});
+		
+	});
+	
+	// 파일이 업로드 가능한지 여부 확인 기능
+	function checkFile(fileName, fileSize){
+		// File Size Limit(파일 사이즈 제한)
+		// 파일 체크 : true(업로드 가능), false(업로드 불가능)
+		let MAXSIZE = 5000000;
+		
+		if(fileSize > MAXSIZE){
+			alert("파일 사이즈가 왜 이렇게 큰가요");
+			return false;
+		}
+		
+		// File Extension Check
+		// .*? : .앞에 무슨 글자든 몇 글자든 상관없지만 (exe|sh|zip|alz)으로 끝나야 됨
+		let RULE = new RegExp("(.*?)\.(exe|sh|zip|alz)$")			
+		if(RULE.test(fileName)){
+			alert("이런 파일 올리시면 혼납니다.")
+			return false;
+		}
+		
+		return true;		// 위의 if문 두개 통과 시 ture 리턴
+	}
+	
+	function showUploadFile(fileArray){
+		let uploadResult = $(".uploadResult ul");
+		
+		let str = "";
+		
+		$(fileArray).each(function(i, obj){
+			str += "<li>";
+			if(obj.image) str += "<image src='/img/image.png' width='16px'> ";
+			else		  str += "<image src='/img/attach.png' width='16px'> ";
+			str += obj.fileName.substring(obj.fileName.indexOf("_") + 1);
+			str += "</li>";
+		});
+		
+		console.log(str);
+		uploadResult.append(str);
+		
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+</html>

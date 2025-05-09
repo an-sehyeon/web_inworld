@@ -1,0 +1,24 @@
+1737250607295	Rename type 'MainScreen'
+1737253895191	Delete element
+1737272005749	Delete element
+1737620239741	Rename resource 'mainstyles.css'
+1737620608490	Rename resource 'styles.css'
+1737620801369	Rename resource 'MainStyles.css'
+1737620837630	Move 'mainstyles.css' to 'Styles'
+1737621174207	Move 'Styles' to 'static'
+1737622576460	Delete element
+1737629645956	Rename type 'loginmapper'
+1737630157256	Rename compilation unit 'UsersDAO.java'
+1737633580722	Rename type 'LoginDAO'
+1737634879619	Rename resource 'NewFile.xml'
+1737635225685	Delete element
+1737810926721	Delete element
+1737813190857	Move 'Login' to 'sportspsychology'
+1737813463010	Move 'WEB-INF' to 'webapp'
+1737813477103	Delete element
+1737814355477	Move 'Login' to 'SportsPsychology'
+1737814362914	Delete element
+1737814486142	Delete element
+1737821700953	Move folder
+1737821981678	Delete element
+1737821988279	Move 'Login' to 'SportsPsychology'

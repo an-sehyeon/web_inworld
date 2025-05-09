@@ -1,0 +1,24 @@
+Day06
+
+1. Exercise
+    (1) subject.html 생성
+        - 국, 영, 수 점수를 입력받을 수 있는 input 3개
+        - 입력받은 후 제출 버튼을 누르면 /ex/subjectVO 호출
+
+    (2) ExampleController의 subjectVO에서는 입력 3개를 받고, 합계와 평균을 계산하여
+        subjectVO.html.로 전달
+
+    (3) subjectVO는 테이블 형태로 국, 영, 수, 합계, 평균을 display
+
+
+2. mapper
+    - 데이터베이스로부터 데이터를 조회/삭제/변경 등을 수행하는 기본적인 쿼리를 담당하는 메서드
+    - 공용 사용을 위해 비즈니스 로직은 최소화
+
+
+3. DAO(Data Access Object)
+    - 이번 달 우리 회사는 물품 주문 고객에게 포인트를 2배
+    - 물품 주문 -> 고객 포인트 적립
+
+    - 다음 달에는 안함
+    - 물품 주문 -> 끝

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Read Article</title>
+</head>
+<body>
+	<!-- 
+	<h1 th:text="${vo.title}"></h1>
+	<hr>
+	<p th:text="${vo.content}"></p>
+	<p>작성자 : [[${vo.writer}]]</p>
+	<p>등록일 : [[${vo.regdate}]]</p>
+	<p>수정일 : [[${vo.updatedate}]]</p>
+	 -->
+	 <form action="/board/remove">
+	 
+		<table border="1">
+			<tr><td>제목</td><td th:text="${vo.title}"></td></tr>
+			<tr><td>내용</td><td th:text="${vo.content}"></td></tr>
+			<tr><td>저자</td><td th:text="${vo.writer}"></td></tr>
+			<tr><td>등록</td><td th:text="${vo.regdate}"></td></tr>
+			<tr><td>수정</td><td th:text="${vo.updatedate}"></td></tr>
+		</table>
+		<input type="hidden" name="bno" th:field="${vo.bno}">
+		<button>삭제하기</button>
+	</form>
+</body>
+<script>
+	var title = [[${vo.bno}]];				//   int 
+	//var title = "[[${vo.title}]]";				// String
+	console.log(title);
+	alert(title);
+</script>
+</html>

@@ -1,0 +1,17 @@
+package com.koreait.board.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.koreait.board.bean.BoardVO;
+
+@Mapper
+public interface BoardMapper {
+	// 게시글 추가
+	public int insert(BoardVO vo);
+	public int insertSelectKey(BoardVO vo);		// bno 채번 결과를 vo에 담음
+	
+	// 게시글 리스트
+	public List<BoardVO> getList();
+}
