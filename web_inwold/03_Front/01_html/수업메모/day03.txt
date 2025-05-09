@@ -1,0 +1,45 @@
+https://us06web.zoom.us/rec/share/Uvzp5l6T45FaMLMa8oAt5lQIqccIGhB4kMTgqPiRivfeYjbJyjeaPl5qt-Sd9m63.CA3Dku1Mse5IkLte
+&%V4mb&8
+
+1. link(링크) 태크
+    - HTM link : 현재 페이지에서 다른 페이지로 이동하는 목적
+    - 하이퍼링크 또는 링크라고 부르며 HTML에서는 <a> 태그를 통해 구현한다.
+    <a href="경로 또는 외부 사이트 주소" target="보여줄 창">
+        문자열,이미지
+    </a>
+
+
+2. img(이미지) 태크
+    - 웹 페이지에서 주로 사용되는 이미지의 종류
+        1) JPEG : .jpg, .jpeg - 휴대폰, 카메라 사진
+        2) GIF : .gif - 움직이는 이미지
+        3) PNG : .png - 배경을 투명하게 할 때 사용
+
+    <img src="이미지 경로" alt="대체 문자열">
+
+    - 이미지 경로는 절대 경로와 상대 경로가 있음
+    - 웹 서버를 기동하면 기본적으로 document root가 존재
+    - 이 document root가 보통 /로 표현되며, 절대경로는 이 /를 기준으로 /images/intro/24.jpg
+    - 상대경로는 현재 html이 위치한 곳을 기준으로 .(현재 디렉토리) ...(한단계 위 디렉토리)
+
+
+3. list(리스트) 태그
+    (1) 순서없는 리스트(UL) : unordered list
+        <ul>과 <li>로 구성
+        
+        <ul>
+            <li>리스트1<li>
+            <li>리스트2<li>
+            ...
+        </ul>
+
+
+    (2) 순서있는 리스트(OL) : ordered list
+        
+        <ol type="타입값" start="시작값">
+            <li>리스트1</li>
+            <li>리스트2</li>
+            ...
+        </ol>
+
+        타입값 : 1(숫자), A(영 대문자), a(영 소문자), i(로마숫자), I(로마숫자)

@@ -1,0 +1,52 @@
+https://us06web.zoom.us/rec/share/kbsXrn1qYFtA4ovjt6GrC2Rr_AES4hrzUO70uf6t5yXEG4SjYVUTYk_ZM2Npy1WI.iPh3ffCDj29kOSYW
+y6?&B4vV
+
+1. Table(테이블)
+    (1) 테이블
+        - 여러 종류의 데이터가 행과 열로 정리된 표
+        <table>
+
+        <body width ="80%">                     
+
+        <table border="선굵기" align="정렬위치" width="너비">
+            <tr teight="높이">
+                <th>이름</th>
+                <td>데이터</td>
+                ...
+                <td>데이터</td>
+            </th>
+        </table>
+        </body>
+
+
+
+2. merge(병합)
+    1) 열병합
+        colspan="합칠 열의 개수"
+        <tr><td><td><td><td></tr>
+        <tr><td><   td   ><td></tr>
+
+    => <tr><td><td colspan="3"><td></tr>
+
+
+    2) 행병합
+        rowspan="합칠 행의 개수"
+
+        <tr><td rowspan="2"><td><td><td><td></tr>
+        <tr>                <td><td><td><td></tr>
+        <tr><td>            <td><td><td><td></tr>
+
+
+    3) caption
+        - <caption> 태크고 테이블 상단에 짧은 설명을 붙일 수 있음
+        - table 1개 당 1번만 사용
+
+
+    4) colgroup
+        - 뒤에 나오는 컬럼(td)에 적용할 스타일을 미리 적용
+
+
+    5) thead, tbody, tfoot
+        - 행을 묶어서 스타일을 저장
+        - 하나의 테이블에 하나씩만 사용 가능
+        - 시각 장애인을 위한 화면 판독기 가능(웹접근성)

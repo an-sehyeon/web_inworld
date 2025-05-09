@@ -1,0 +1,13 @@
+https://us06web.zoom.us/rec/share/JasWzjTgQsngU9gUcl7loxZzPPa7q5YLU4_q3RHJoIkE5wNK7A_4J9YYQdPD6BqS.IyhnQUnQa3G8RS7Y
+Ka?@.9^f
+
+1. KaKaoMap
+    - 카카오개발자 사이트 로그인 / 등록하기
+    - developers.kakao.com
+    - 내 애플리케이션 생성
+    - 각종 key가 발급된다.
+    - 플랫폼 등록(web)
+        http://localhost:5500 (여기서 5500 live server의 기본포트)
+    - VS Code에서 Five Server 설치
+    - 웹 서버 구동 단축키 : Control + L + O
+    - 화면 권한에서 위치 정보 허용

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <title>Event Tag</title>
+</head>
+<body>
+    <h1>Event Tag</h1>
+    <hr>
+    <img src="./images/grayscale.jpeg"
+         onmouseover="this.src='./images/color.jpeg'"
+         onmouseout="this.src='./images/grayscale.jpeg'"
+         onclick="this.width='1000'"
+         ondblclick="this.width='600'"
+    >
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title>Timeout</title>
+</head>
+<body>
+    <div id="wrap"></div>
+</body>
+<script>
+    // setTimeout : 일정 시간 경과 후 실행, 1회성
+    // let : 블록 스코프, 블록({}) 내부에서만 유효
+    // getElementByID : HTML 문서에서 특정 ID를 가진 요소를 선택하여 조작 가능, ID는 HTML 요소의 고유한 식별자여야 하고, 페이지에서 해당 ID를 가진 요소가 하나만 존재해야됨
+    // createElement : 지정한 태그 이름으로 새로운 HTML 요소를 동적으로 생성
+
+    function formatYourPC() {                                           // 경고 메시지를 출력하는 함수
+        let div = document.getElementById("wrap");                      // "wrap" ID를 가진 <div> 요소를 선택
+        let h1 = document.createElement("h1");                          // <h1> 태그를 동적으로 생성
+        h1.innerHTML = "네 PC는 이제 포맷된다 ㅎㅎㅎ";                    // <h1> 태그 안에 출력할 텍스트 설정
+        div.appendChild(h1);                                            // 생성한 <h1> 태그를 "wrap" 요소의 자식으로 추가
+    }
+    setTimeout(formatYourPC,1000);                                      // 3000ms(3초) 후에 formatYourPC 함수 호출
+
+
+    // var : 함수 스코프, var로 선언된 변수는 함수 내부에서만 유효
+    function formatYourPC2(){
+        var div = document.getElementById("wrap");                      // "wrap" ID를 가진 <div> 요소를 선택
+        console.log(div);
+        let h2 = document.createElement("h2");                          // <h2> 태그를 동적으로 생성
+        h2.innerHTML = "너 진짜 이제 큰일났다 ㅎㅎㅎ";                    // <h2> 태그 안에 출력할 텍스트 설정  
+        div.appendChild(h2);                                            // 생성한 <h2> 태그를 "wrap" 요소의 자식으로 추가
+    }
+
+    // setInterval : 특정 함수를 지정된 시간 간격마다 반복적으로 실행하도록 설정
+    var handler = setInterval(formatYourPC2, 2000);                     // 2초마다 formatYourPC2함수 호출, handler : setInterval이 반환한 고유 ID를 저장하는 변수,
+    console.log("handler : " + handler);                                // 이 ID를 이용해 나중에 clearInterval을 호출하면 해당 반복 작업을 중지할 수 있음
+
+    // 20초 후에 반복 작업 중지
+    setTimeout(function(){
+        clearInterval(handler)
+    },20000);
+</script>
+</html>

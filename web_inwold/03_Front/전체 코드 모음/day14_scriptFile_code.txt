@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>script file</title>
+</head>
+<body>
+    <h1>스크립트 파일로 작성된 페이지</h1>
+    <hr>
+    <img src="./images/grayscale.jpeg"
+         onmouseover="over(this)"
+         onmouseout="out(this)"
+         onclick="clck(this)"
+         ondblclick="dblclck(this)"
+    >
+</body>
+<script src="./js/03_scriptFile.js"></script>
+</html>

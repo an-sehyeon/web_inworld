@@ -1,0 +1,6 @@
+https://us06web.zoom.us/rec/share/P-p1cl4wITDfnO1qEPfPdoteuVn5115Cxi2hOi_26lRXhoLuBjcKhpKisLfpWmz-.eh7hFtecNG0w252H
+hZ0^?3?*
+
+1. CSS 입문
+    - CSS는 전체 페이지의 디자인을 담당한다.
+    - head 태그 부분에 위치하거나, 외부 파일로 존재

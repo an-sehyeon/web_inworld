@@ -1,0 +1,98 @@
+<!-- <!doctype html>
+<html>
+<head>
+    <title>jQuery Event</title>
+    <style>
+        .desert{
+            color : red;
+            font-size : 32px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="desert">
+        <li>Coffee</li>
+        <li>Cake</li>
+        <li>Egg Tart</li>
+        <li>Macaron</li>
+        <li>Lets'be</li>
+    </ul>
+    <div id="div1">Toggle</div>
+    <div id="div2">Fade Toggle</div>
+    <div id="div3">Slide</div>
+    <div id="div4">Class ON/OFF</div>
+</body>
+<script src="./js/jquery-3.7.1.js"></script>
+<script>
+    const $div1 = ("#div1");
+    $div1.on("click", function(){
+        // show, hide, toggle
+        $("ul").toggle(500);
+    });
+
+    $("#div2").on("click",function(){
+        // fadeln, fadeOut, fadeToggle
+        $("ul").fadeToggle(1000);
+    });
+
+    $("#div3").on("click", function(){
+        // slideDown, slideUp, slideToggle
+        $("ul").slideToggle(1000);
+    });
+
+    $("#div4").on(click,function(){
+        // class ON/OFF
+        $("ul").toggleClass("dessert");
+    });
+
+</script>
+
+</html> -->
+<!doctype html>
+<html>
+<head>
+    <title>jQuery Event</title>
+    <style>
+        .dessert {
+            color: red;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="dessert">
+         <li>Coffee</li>
+         <li>Cake</li>
+         <li>Egg Tart</li>
+         <li>Macaron</li>
+         <li>Lets'be</li>
+    </ul>
+    <div id="div1">Toggle</div>
+    <div id="div2">Fade Toggle</div>
+    <div id="div3">Slide</div>
+    <div id="div4">Class ON/OFF</div>
+</body>
+<script src="./js/jquery-3.7.1.js"></script>
+<script>
+    const $div1 = $("#div1");
+    $div1.on("click", function(){
+        // show, hide, toggle
+        $("ul").toggle(500);
+    });
+    
+    $("#div2").on("click", function(){
+        // fadeIn, fadeOut, fadeToggle
+        $("ul").fadeToggle(1000);
+    });
+
+    $("#div3").on("click", function(){
+        // slideDown, slideUp, slideToggle
+        $("ul").slideToggle(1000);
+    });
+
+    $("#div4").on("click", function(){
+        // class ON/OFF
+        $("ul").toggleClass("dessert");
+    });
+</script>
+</html>

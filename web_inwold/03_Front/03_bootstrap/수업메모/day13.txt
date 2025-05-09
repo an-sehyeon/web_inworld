@@ -1,0 +1,32 @@
+https://us06web.zoom.us/rec/share/I4TWlKRW0ocU0MAoBpHm_giM72QBD-UNeUh-IdUo09JZhqWH00KkKu-RUhIbi_g2.Amo546PZWEF1AcZq
+uJp0wL=8
+
+1. 다양한 컴포넌트 실습
+    1. button
+    2. text
+            - text-primary  : 강조 또는 주요 정보
+            - text-success  : 성공
+            - text-warning  : 경고
+            - text-info     : 정보
+            - text-danger   : 위험 또는 오류
+        
+        텍스트 변환 클래스
+            - text-uppercase    : 텍스트를 모두 대문자로 변환
+            - text-lowercase    : 텍스트를 모두 소문자로 변환
+            - text-capitalize   : 각 단어의 첫 글자만 대문다로
+
+        정렬 클래스     
+            - text-start    : 왼쪽 정렬(기본값)
+            - text-center   : 가운데 정렬
+            - text-end      : 오른쪽 정렬
+
+
+    3. advaced table
+    4. grid
+
+
+
+2. Fruther Study
+    - getbootstrap.com의 layout 부분 충실하게
+    - form & component는 light하게
+    ->  어차피 못 외움

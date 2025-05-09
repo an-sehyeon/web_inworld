@@ -1,0 +1,32 @@
+https://us06web.zoom.us/rec/share/Anj2ZKSOY7Eo4hnBnzRAm3JL10Ug_WJTSKrpyPq6Q-PUtIP3MwGjDJCszABr3NIp.XnJRSOz39VC2r42b
+f8G?9*ak
+
+1. 내장 객체(Internal Object)
+    (1) Date
+        - 날짜, 시간에 관련된 오브젝트
+          var now = new Date();
+
+          getTime() : 1970년 1월1일 0시0분0초 기준의 밀리초
+          get* : getMilliseconds
+
+
+    (2) Math
+        - 기본 수학 연산에 대한 오브젝트
+        floor, ceil, abs 등 기본 함수 보유
+        random() : 0 ~ 1 사이의 소수를 돌려줌
+        getRandom(N) : 1 ~ N 사이의 임의의 자연수를 돌려줌
+
+
+
+2. Timeouts
+    (1) setTimeout
+        - 일정 시간 경과 후 실행(1회만)
+        setTimeout(실행할 함수, 시간-밀리초)
+
+    (2) setlnterval
+        - 일정 시간 마다 실행
+        var handler = setlnterval(실행할 함수, 시간-밀리초)
+
+    (3) clearlnterval
+        - Interval 설정 취소
+        clearINterval(handler)

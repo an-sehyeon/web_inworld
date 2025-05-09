@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Event Tag</title>
+</head>
+<body>
+    <h1>Event Tag</h1>
+    <hr>
+    <!-- <img> : 이미지를 삽입, 기본 이미지로 grayscale.jpeg 설정 -->
+    <!-- onmouseove : 이미지 위로 마우스를 올렸을 때 실행, 컬러 이미지로 변경 -->
+    <!-- onmouseout : 마우스가 이미지에서 벗어났을 때 실행, 흑백 이미지로 변경-->
+    <!-- onclic : 이미지를 클릭 했을 때 실행 , 너비가 1000px로 변경-->
+    <!-- ondblclick : 이미지를 더블 클릭 했을 때 실행, 너비가 600px로 변경 -->
+    <img src="./images/grayscale.jpeg"                      
+        onmouseover="this.src='./images/color.jpeg'"
+        onmouseout="this.src='./images/grayscale.jpeg'"
+        onclick="this.width='1000'"
+        ondblclick="this.width='600'"    
+    >
+</body>
+</html>

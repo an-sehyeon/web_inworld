@@ -1,0 +1,27 @@
+https://us06web.zoom.us/rec/share/I4TWlKRW0ocU0MAoBpHm_giM72QBD-UNeUh-IdUo09JZhqWH00KkKu-RUhIbi_g2.Amo546PZWEF1AcZq
+uJp0wL=8
+
+1. BOM(Browser Object Model)
+    (1) window 객체
+        - 웹 브라우저의 창을 나타내는 객체
+        - 자바스크립트의 모든 객체, 전역변수, 전역함수들은 자동으로 window 객체의 프로퍼티가 됨
+
+        1) window.onload = function(){
+
+        }
+
+        2) widow.open()
+            - 새로운 브라우저 창을 여는 메서드
+            - 내 페이지에, 새 페이지에, 부모 페이지에, 자식 페이지에
+            - 기본 사용법
+                var 객체명 = window.open(url,name,spec)
+                url : 이동할 주소
+                name : blank(새창), _self(현재 페이지)
+                    _parent(부모 프레임), _child(자식 프레임)
+                spec : 창의 크기, 스크롤 가능여부, 리사이즈 가능 여부
+
+    (2) location 객체
+        - 현재 브라우저에 표시된 HTML 주소 얻어오기
+        - 브라우저에 새 문서를 불러올 때 사용 가능
+        - var site = location.href;             // 현재 페이지 주소를 site에 저장
+          location.href = "http://www.naver.com"        

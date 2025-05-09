@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+    <title>Exercise I</title>
+</head>
+<body>
+</body>
+<script>
+    var choice = prompt("1,2,3번 이미지 중 몇 번 선택??");
+    document.write("<h1>" + choice + "번을 선택하셨습니다.</h1>");
+
+    var image;
+    if(choice == 1){  // "1" == 1 => true
+        image = "image001.jpg";
+    }
+    else if(choice == 2){
+        image = "image002.jpg";
+    }
+    else {
+        image = "image003.jpg";
+    }
+    document.write("<img src='./images/" + image + "'>");
+    // src='./images/image001.jpg'
+
+    var images = new Array();
+    images.push("image001.jpg");
+    images.push("image002.jpg");
+    images.push("image003.jpg");
+    document.write("<img src='./images/" + images[choice-1] + "'>");
+
+</script>
+</html>

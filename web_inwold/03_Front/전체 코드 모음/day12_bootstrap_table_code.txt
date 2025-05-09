@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>BootStrap Table</title>
+    <link rel="stylesheet" 
+          href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <h1>BootStrap Table</h1>
+    <hr>
+    <div class="container col-md-6">
+        <table class="table text-center table-striped">
+            <thead>
+                <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>영어</td>
+                    <td>수학</td>
+                    <td>과학</td>
+                    <td>국어</td>
+                    <td>수학</td>
+                </tr>
+                <tr>
+                    <td class="table-danger">윤리</td>
+                    <td>과학</td>
+                    <td class="table-info">음악</td>
+                    <td>미술</td>
+                    <td>과학</td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
