@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Write</title>
+</head>
+<div th:replace="~{/include/header}"></div>
+<br><br><br><br><br><br><br>
+<body>
+	<h1>무엇을 도와드릴까요?</h1>
+	<hr>
+	<form action="/board/register" method="post">
+		<p>title : <input type="text" name="title"></p>
+		<p>content : <br><textarea name="content"></textarea></p>
+		<p>writer : <input type="text" name="writer"></p>
+		
+		<input type="submit" value="Register">
+	</form>
+</body>
+</html>

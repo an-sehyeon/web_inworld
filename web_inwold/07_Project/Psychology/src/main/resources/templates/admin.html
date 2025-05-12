@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>사용자 테스트 결과</title>
+</head>
+<div th:replace="~{/include/header}"></div>
+<body>
+	<br><br><br><br><br><br>
+    <h1>사용자 테스트 결과</h1>
+
+    <form action="/admin/search" method="get">
+        <label>사용자 이름:</label>
+        <input type="text" name="username" required>
+        <button type="submit">검색</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>사용자 이름</th>
+            <th>인지불안</th>
+            <th>신체불안</th>
+            <th>자신감</th>
+            <th>총점</th>
+            <th>테스트 날짜</th>
+        </tr>
+        <tr th:each="result : ${results}">
+            <td th:text="${result.user.username}"></td>
+            <td th:text="${result.cognitiveScore}"></td>
+            <td th:text="${result.somaticScore}"></td>
+            <td th:text="${result.confidenceScore}"></td>
+            <td th:text="${result.totalScore}"></td>
+            <td th:text="${result.createdAt}"></td>
+        </tr>
+    </table>
+</body>
+</html>
