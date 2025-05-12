@@ -1,0 +1,87 @@
+package java01;
+
+public class 연산 {
+	public static void main(String[] args) {
+//		
+//		[ 복합대입 연산자 ]
+//		int a = 10;		// 변수 a를 10으로 초기화
+//		a += 10;		// a에 10을 더해주고 더해진 값을 a에 저장
+//		a -= 5;			// a에 5를 뻬주고 뺀 값을 a에 저장
+//		a *= 3;			// a에 3을 곱해주고 곱해진 값을 a에 저장
+//		System.out.println( "a= " + a);		// 결과값 == 45
+//		
+//		
+//	}
+//
+//}
+
+//		[ 비교연산자 ]
+//		int a = 100, b = 20;
+//		System.out.println("A == B : " + (a == b)); // a와 b는 같은가?
+//		System.out.println("A > B : " + (a > b));	// a가 b보다 큰가? 
+//		System.out.println("A < B : " + (a < b)); 	// a보다 b가 큰가?
+//		System.out.println("A >= B : " + (a >= b)); // a가 b보다 같거나 큰가?
+//
+//	}	
+//}	
+		
+//		[ 자료형 비교 (instanceof 연산자) ]
+//		비교대상 데이터가 다음과 같은 조건을 만족할때 true을 반환한다.
+//		
+//		- 지정한 클래스
+//		- 지정한 클래스를 상속한 클래스
+//		- 지정한 인터페이스를 구현한 클래스
+//		
+//		[1] 자료형 비교
+//		String value = "가나다라마";
+//		boolean result = value instanceof String;
+//		System.out.println(result);
+//	}	
+//}		
+		
+		
+//		[ 논리연산자 ]
+//		And연산자 '&&' : 모든 조건식이 true여야 true을 반환
+//		or연산자 '||' : 조건식 중 하나라도 true면 true를 반환
+//		NOT연산자 '!' : 조건이 true면 false를 반환하고 조건이 false면 true를 반환
+//		
+//		
+//		(and 연산자)
+//		System.out.println( "true And true =" + (true && true));
+//		System.out.println( "true And true =" + (false && true));
+//		System.out.println( "true And true =" + (true && false));
+//		System.out.println( "true And true =" + (false && false);
+
+		
+//		(or 연산자)
+//		System.out.println( "true And true =" + (true || true));
+//		System.out.println( "true And true =" + (true && false));
+//		System.out.println( "true And true =" + (false && false);
+
+		
+//		(not 연산자)
+//		boolean fiag = false;
+//		System.out.println("flag : " + fiag);
+//		System.out.println("!flag : " + !fiag);
+//	}	
+//}			
+//		[ 증감 연산자 (++, --) ]
+//		++a 전치연산자 : 먼저 값을 1씩 증가(감소)이휴 다른 연산 처리
+//		--a 후치연산자 : 다른 연산 처리를 먼저한 후 1증가(감소)
+		
+		int a = 10, b = 10, c, d;
+		c = --a + b--;
+		d = a-- + b--;
+		System.out.printf("a = %d, b = %d, c = %d, d = %d",a,b,c,d);
+		
+	}	
+}		
+	
+
+//	}	
+//}		
+//
+//		
+//		
+//	}	
+//}		

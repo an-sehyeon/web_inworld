@@ -1,0 +1,5 @@
+package com.sehyeon.sychology.dto;
+
+public class JoinDTO {
+
+}

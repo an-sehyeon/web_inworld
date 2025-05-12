@@ -1,0 +1,35 @@
+
+1. Vue Router
+    - Vue.js 라이브러리를 사용하여 싱글 페이지 어플리케이션(SPA)
+    - Vue Router를 사용하면 Vue로 만든 페이지 간 자유로운 이동 가능
+
+    Vue Router 사용 방법
+    1) npm install vue-router
+    2) <script src="Vue Router 주소"></script>
+
+    Vue Router 구현
+        <router-viwe></router-view>
+        url이 변경됨에 따라 해당 컴포넌트 display
+
+        <router-link to='URL'>이동표시글자</router-link>
+        페이지 이동 태그, 화면에서는 <a>태그의 역할
+        to는 a 태그의 href의 역할 수행
+
+
+2. Axios
+    - Vue에서 권장하는 Http 통신 라이브러리
+
+    Vue-router와 마찬가지로 설치 또는 CDN을 통해 사용 가능
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    axios를 활용하여 user-list를 화면에 구현
+    json 데이터 제공 사이트 : https://jsonplaceholder.typicode.com/users/
+
+
+3. Component(advanced)
+    - Component는 상위-하위의 개념을 갖는다.
+    - 데이터 이동이 자유롭기 때문에 코딩이 쉬운 반면, 오류 발생 시 원인을 찾기가 매우 힘듬
+    
+    => 규칙을 세우게 됨
+        - 데이터의 흐름은 상위 -> 하위 => props사용
+        - 하위에서 상위로 데이터 전송을 하려면? => 이벤트 사용

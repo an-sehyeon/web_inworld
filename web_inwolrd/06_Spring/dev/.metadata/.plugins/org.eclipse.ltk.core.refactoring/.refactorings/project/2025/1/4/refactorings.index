@@ -1,0 +1,26 @@
+1737290684018	Delete element
+1737290695802	Delete element
+1737290703295	Delete element
+1737290715456	Delete element
+1737290769718	Delete element
+1737290796148	Delete element
+1737290829398	Delete element
+1737291895210	Delete element
+1737291979091	Delete element
+1737292027257	Delete element
+1737292059458	Delete element
+1737292085854	Delete element
+1737292109152	Delete element
+1737300602853	Rename package 'com.koreait.board'
+1737300643300	Rename package 'com.koreait.board.util'
+1737300654994	Rename package 'com.koreait.board.mybatis'
+1737300670346	Rename package 'com.koreait.board.mapper'
+1737300686106	Rename package 'com.koreait.board.dao'
+1737300705311	Rename package 'com.koreait.board.controller'
+1737300718821	Rename package 'com.koreait.board.bean'
+1737300746619	Rename package 'com.koreait.board'
+1737300759835	Rename package 'com.koreait.board.dao'
+1737300776532	Rename package 'com.koreait.board.mapper'
+1737300794526	Rename package 'com.koreait.board.mybatis'
+1737300897180	Rename type 'BoardVO'
+1737300984961	Rename resource 'BoardMapper.xml'

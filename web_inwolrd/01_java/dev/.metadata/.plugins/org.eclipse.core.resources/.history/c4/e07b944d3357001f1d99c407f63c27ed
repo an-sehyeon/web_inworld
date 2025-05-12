@@ -1,0 +1,16 @@
+package java01;
+
+public class 연산 {
+	public static void main(String[] args) {
+		
+		// 복합대입 연산자
+		int a = 10;
+		a += 10;
+		a -= 5;
+		a *= 3;
+		System.out.println( "a=" + a);
+		
+		
+	}
+
+}

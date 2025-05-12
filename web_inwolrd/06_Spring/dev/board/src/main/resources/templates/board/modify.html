@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modify</title>
+<style>
+	input {							/* input 태그에 대한 스타일 설정 */			
+		border-width: 0 0 3px;		
+		outline: none;
+	}
+</style>
+</head>
+<body>
+	<form action="/board/modify" method="post">
+		<p>번호 : <input type="text" name="bno" th:field="${board.bno}" readonly>				<!-- readonly : 수정X -->
+		<p>제목 : <input type="text" name="title" th:field="${board.title}"></p>
+		<p>내용 : <input type="text" name="content" th:field="${board.content}"></p>
+		<p>저자 : <input type="text" name="writer" th:field="${board.writer}"></p>
+		<p>등록일 : <input type="text" name="regdate" th:field="${board.regdate}" readonly></p>
+		<button>수정완료</button>
+	</form>
+</body>
+</html>

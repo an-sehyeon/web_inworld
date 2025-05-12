@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+</head>
+<div th:replace="~{/include/header}"></div>
+<body>
+
+	<h1>Login Page</h1>
+	<hr>
+	<br><br><br><br><br><br><br><br>
+	
+	<!-- 로그인하지 않은 상태에서만 출력 -->
+	<div th:if="${id == 'anonymousUser'}">
+	    <p>로그인하지 않은 사용자입니다.</p>
+	    <button onclick="location.href='/login'">로그인</button>
+	</div>
+	
+	<form action="/loginProc" method="post" name="loginForm">
+		<input id="username" type="text" name="username" placeholder="id"/>
+		<input id="password" type="password" name="password" placeholder="password"/>
+		<input type="submit" value="login"/>
+	</form>
+	
+</body>
+</html>

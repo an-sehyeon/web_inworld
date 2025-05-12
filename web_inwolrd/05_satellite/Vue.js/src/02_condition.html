@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Condition</title>
+</head>
+<script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Conditional Statement</h1>
+    <hr>
+    <div id="ifs">
+        <p v-if="seen_ok">이 글이 보이십니까?</p>
+        <button v-if="button_yn">나는 생각한다. 고로 존재한다.</button>
+    </div>
+    <br><br>
+    <div id="fors">
+        <ul>
+            <li v-for="food in foods">          <!-- foods(복수형)의 데이터를 하나씩 꺼내와서 food(단수형)에 저장-->
+                {{ food.name }}                 <!-- food의 저장된 name을 하나씩 반복하며 출력 -->
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var app3 = new Vue({
+        el: '#ifs',
+        data:{
+            seen_ok: true,
+            button_yn: true
+        }
+    });
+
+    var app4 = new Vue({
+        el: '#fors',
+        data:{
+            foods: [
+                { name: '햄버거+콜라' },
+                { name: '김치볶음밥' },
+                { name: '식혜' }
+            ]
+        }
+    });
+</script>
+</html>

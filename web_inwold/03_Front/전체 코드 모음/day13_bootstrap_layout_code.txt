@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>Bootstrap Layout</title>
+    <link rel="stylesheet" 
+          href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col" style="background-color: red">RED</div>
+        <div class="col" style="background-color: yellow">YELLOW</div>
+        <div class="col" style="background-color: green">GREEN</div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-2" style="background-color: red">DIVA</div>
+        <div class="col-sm-2" style="background-color: yellow">DIVB</div>
+        <div class="w-50" style="background-color: black; color: white">DIVC</div>
+        <div class="col-sm-2 bg-primary">DIVD</div>
+        <div class="col-sm-2" style="background-color: pink">DIVE</div>
+    </div>
+</body>
+</html>

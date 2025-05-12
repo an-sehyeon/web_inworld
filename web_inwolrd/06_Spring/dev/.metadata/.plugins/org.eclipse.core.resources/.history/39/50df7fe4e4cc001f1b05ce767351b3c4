@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 연결할 인터페이스 정보를 namespace에 기술 -->
+<mapper namespace="com.koreait.board.mapper.BoardMapper">					<!-- 인터페이스명 입력 -->
+	<insert id="insert">													<!-- insert 실행 -->
+		INSERT INTO TBL_BOARD(BNO, TITLE, CONTENT, WRITER)
+		VALUES(NEXTVAL(SEQ_BOARD), #{title}, #{content}, #{writer})			<!-- # : 외부에서 집어넣는 데이터 -->
+	</insert>
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+			SELECT NEXTVAL(SEQ_BOARD) FROM DUAL					<!-- 여기서 나온 결과를 keyProperty="bno"에 저장 -->
+		</selectKey>
+		INSERT INTO TBL_BOARD(BNO, TITLE, CONTENT, WRITER)
+		VALUES(#{bno}, #{title}, #{content}, #{writer})
+	</insert>
+	<select id="getList">
+		SELECT 	*
+		FROM	TBL_BOARD
+		WHERE	BON > 0
+	</select>
+</mapper>

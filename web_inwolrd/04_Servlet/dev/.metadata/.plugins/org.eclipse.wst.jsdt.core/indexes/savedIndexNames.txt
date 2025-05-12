@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+E:\web_inworld\04_Servlet\dev\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1243057733.index
+2977800388.index
+2193572323.index
+965178567.index
+1465952007.index
+3839241614.index

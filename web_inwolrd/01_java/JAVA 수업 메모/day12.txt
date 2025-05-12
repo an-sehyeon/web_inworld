@@ -1,0 +1,51 @@
+
+1. RefTest.java
+    - 객체 간의 상호 무한 호출로 메모리 부족
+
+2. String Class 
+    String str1 = "abcde";
+    String str2 = "abcde";
+    String str3 = new String("abcde");
+    String str4 = new String("abcde");
+
+    str1 == str2 ?  ture
+    str3 == str4 ?  false
+    
+
+(1) final 클래스로 상속 불가
+    int, float, double과 같은 primitive(원시)의 데이터형 거의 유사한 취급
+
+
+(2) new String("~~~"), "~~~" 두가지로 생성 가능
+
+
+(3) 다수의 메서드들이 존재
+    1) length() : 문자열의 길이
+        ch) char[] str => str.length
+            String str => str.lenght()
+    
+    2) charAt(인덱스) : 인덱스 위치에 있는 글자
+        jumin_no = "001231-8000121";
+        gender = jumin_no.charAt(7);
+
+    3) equals(str) : str과 동일한 문자열값인지 체크
+        equalsIgnoreCase(str) : 대소문자 구분 없이 체크
+        
+    4) replace(찾을 문자열, 대체 문자열)
+
+    5) substring(시작인덱스(포함), 종료인덱스(미포함))
+        결과의 글자 수는 종료인덱스 - 시작인덱스
+        substring(426132, 1257123)
+        jumin_no .substring(0,6) => "001231"
+        두 번째 인자를 생략하면 끝까지 
+
+    6) trim() : 문자열 앞 뒤의 공백 제거
+
+    7) split(나눌문자) : 나눌문자를 기준으로 나누어 배열로 돌려줌
+
+    8) matches(정규표현식) : 문자열이 정규표현식에 맞는지 체크
+                Regular Expression
+                영문자 : A-Za-z
+                숫자 : 0-9
+                한글 : 가-힣
+                (.*?)\.(exe|sh|zip|alz)$

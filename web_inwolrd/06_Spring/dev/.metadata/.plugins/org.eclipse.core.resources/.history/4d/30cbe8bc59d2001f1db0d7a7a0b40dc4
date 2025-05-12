@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Read Article</title>
+</head>
+<body>
+	<!-- 
+	<h1 th:text="${vo.title}"></h1>
+	<hr>
+	<p th:text="${vo.content}"></p>
+	<p>작성자 : [[${vo.writer}]]</p>
+	<p>등록일 : [[${vo.regdate}]]</p>
+	<p>수정일 : [[${vo.updatedate}]]</p>
+	 -->
+	 <form action="/board/remove">
+	 
+		<table border="1">
+			<tr><td>제목</td><td th:text="${vo.title}"></td></tr>
+			<tr><td>내용</td><td th:text="${vo.content}"></td></tr>
+			<tr><td>저자</td><td th:text="${vo.writer}"></td></tr>
+			<tr><td>등록</td><td th:text="${vo.regdate}"></td></tr>
+			<tr><td>수정</td><td th:text="${vo.updatedate}"></td></tr>
+		</table>
+		<div class="uploadResult">
+			<h3>첨부파일</h3>
+			<ul></ul>
+		</div>
+		
+		<input type="hidden" name="bno" th:field="${vo.bno}">
+		<button>삭제하기</button>
+		<input type="button" onclick="goUpdate()" value="수정하기">
+	</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script th:inline="javascript">
+	function goUpdate(){
+		let bno = [[${vo.bno}]];
+		location.href = "/board/modify?bno=" + bno;
+	}
+	
+
+	var title = [[${vo.bno}]];				//   int 
+	//var title = "[[${vo.title}]]";				// String
+	console.log(title);
+	//alert(title);
+	
+	let bnoValue = [[${vo.bno}]];
+	let ul = $(".uploadResult ul");
+	
+	// "/board/getAttachList", { bno: bnoValue } : 호출하는 파라미터, 결과를 arr에 저장
+	$.getJSON("/board/getAttachList", { bno: bnoValue }, function(arr){
+		console.log(arr);
+		str = "";
+		
+		$(arr).each(function(i, attach){
+			newName = attach.fileName.substring(attach.fileName.indexdOf("_")+1);
+			str =+ "<li>" + attach.fileName + "</li>";
+		});
+		
+		ul.html(str);
+	});
+	
+</script>
+</html>

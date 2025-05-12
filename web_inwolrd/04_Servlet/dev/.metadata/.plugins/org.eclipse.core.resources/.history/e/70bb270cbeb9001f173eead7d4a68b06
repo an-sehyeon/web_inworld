@@ -1,0 +1,6 @@
+package com.korea.servlet;
+
+@WebServlet("/Order")
+public class OrderServlet {
+
+}

@@ -1,0 +1,11 @@
+package day01;
+
+public class Welcome {
+	public static void main(String[] args) {
+		System.out.println("welcome to my house");
+		System.out.println("\033[97m" + "welcome to my house" + "\033[0m");
+		System.out.print("welcome to your house");
+		System.out.print("welcome to his house");	// println과 print의 차이 
+		
+	}
+}

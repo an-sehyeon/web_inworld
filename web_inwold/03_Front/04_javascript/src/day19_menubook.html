@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <title>메뉴판</title>
+</head>
+<body>
+    <h1>Menu Book 등록/취소</h1>
+    <hr>
+    <fieldset>                                                                      <!-- 그룹으로 묶어주는 테두리 블록 -->
+        name : <input type="text" id="name">                                        <!-- 메뉴 이름을 입력받는 텍스트 필드 -->
+        price : <input type="text" id="price">                                      <!-- 메뉴 가격을 입력받는 텍스트 필드 -->
+        <input type="button" value="Add Menu" onclick="addMenu()">                  <!-- input 타입을 버튼으로 설정, 버튼 이름을 "Add Menu" 설정, 버튼 클릭 시 addMenu()함수 호출 -->
+    </fieldset>
+    <hr>
+    <div id="menubook"></div>                                                       <!-- ID명이 menubook인 div 생성, 추가된 메뉴를 표시하는 영역 -->
+</body>
+<script>
+    var menu = new Array();                                                         // 변수명인 menu인 새로운 배열 생성, 메뉴 정보를 저장하기 위한 배열
+    var price = new Object();                                                       // 새로운 오브젝트 생성
+
+    
+    // 메뉴를 추가하는 함수
+    function addMenu(){
+        var name = document.getElementById("name").value;                           // 입력 필드에서 입력한 name 값을 가져옴
+        var price = document.getElementById("price").value;                         // 입력 필드에서 입력한 price 값을 가져옴
+        
+        // 새로운 메뉴 객체 생성
+        item = new Object();                                                        // 빈 객체 생성                                                    
+        item.name = name;                                                           // 입력받은 name을 객체의 name 속성에 저장
+        item.price = price;                                                         // 입력받은 price를 객체의 price 속성에 저장
+        menu.push(item);                                                            // 저장한 name, price 속성 값을 menu 배열에 추가
+        console.log(menu);                                                          // 현재 배열 상태를 콘솔에 출력
+        refreshMenu();                                                              // refreshMenu 함수 호출, 화면에 메뉴 목록 갱신
+        
+        // 입력 필드 초기화 (입력 받은 후 필드를 비움)
+        document.getElementById("name").value = "";                                 // 입력 필드를 비움
+        document.getElementById("price").value = "";                                
+    }
+
+    function refreshMenu(){                                                         // 메뉴 목록을 화면에 표시하는 함수 
+        var menubook = document.getElementById("menubook");                         // 메뉴 목록을 출력할 div 요소를 가져옴, ID가 menubook인 div 위치에 출력
+        var str = "<ul>";                                                           // 순서가 지정되지 않는 목록을 나타내는 태그인 <ul> 시작
+    
+
+
+    // menu의 개수만큼 리스트에 추가
+    for(let i = 0; i < menu.length; i++){                                           // menu 배열에 저장된 각 메뉴 객체를 순회
+        str += "<li onclick = 'removeMenu(" + i + ")'>" + menu[i].name + ' - ';     // "str +="" : str 변수에 기존 문자열에 이어 새로운 문자열 추가, removeMenu함수 호출
+        str += menu[i].price + "</li>";                                             // 즉 <ul><li onclick = 'removeMenu("0")'> menu[0].name - menu[0].price </li></ul>            
+    }
+
+    str += "</ul>";                                                                 // <ul> 태그 끝
+    menubook.innerHTML = str;                                                       // innerHTML : DOM 요소의 HTML 내용을 설정하거나 읽을 때 사용하는 속성                                                    
+    }                                                                               // <div id="menubook"> 내부 내용이 str 변수에 저장된 HTML 코드로 덮어 씌워짐 
+
+
+    // splice(i,n) : i번 인덱스부터 n개
+    function removeMenu(i){                                                         // 리스트를 클릭하면 특정 메뉴를 제거하는 함수
+        menu.splice(i,1);                                                           // i : 클릭한 리스트 항목의 배열 내 인덱스, i번 인덱스부터 1개의 요소 삭제
+        refreshMenu();                                                              // refreshMenu()함수 호출, 변경된 배열 바로 업데이트 
+    }   
+</script>
+</html>

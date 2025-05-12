@@ -1,0 +1,19 @@
+package com.koreait.board.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+@RequestMapping("/upload/*")
+public class UploadController {
+	
+	@PostMapping("uploadAjaxAction")
+	@ResponseBody		// 메서드 종료 시 html(view)로 가지 않고 데이터를 리턴
+	public void uploadAjaxPost() {
+		log.info("[uploadController] uploadAjaxPost() called OK");
+	}
+}

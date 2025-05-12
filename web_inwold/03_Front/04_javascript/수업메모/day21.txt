@@ -1,0 +1,9 @@
+https://us06web.zoom.us/rec/share/KC5GpS6QNh9CKefKU_D2qRW20_5tBXK8lr3IR1OWyXS8Gqc5rCvJC6ua5lBwGGiZ.1vAE2R-F-HXlzJlk
+szd4s9@!
+
+1. DOM 연습
+    - 21_DOM3.html
+
+
+2. banner 실습
+    - 동일한 사이즈의 이미지 5장을 찾아 images에 slide00*로 저장한다.

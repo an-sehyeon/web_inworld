@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <title>Table Advanced</title>
+    <link rel="stylesheet" 
+          href="./bootstrap/css/bootstrap.css">
+</head>
+<body>
+    <h1>Table Advanced - Meal Schedule</h1>
+    <div class="col-md-8" style="margin: 0 auto;">
+        <table class="table text-center table-hover
+                      table-bordered border-secondary">
+            <thead>
+                <tr class="table-primary">
+                    <th>#</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-light">
+                    <th>1</th>
+                    <td>Nothing</td>
+                    <td>Egg Toast</td>
+                    <td>Egg Sunrise</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Buffet</td>
+                    <td class="table-dark">Cruise Meat</td>
+                    <td>Wine and Cheese</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Soup</td>
+                    <td>T-bone Steak</td>
+                    <td>Japan Ramen</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <table class="table text-center table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="align-middle">
+                    <th>1</th>
+                    <td>저희 여행은 아무것도 먹을 것이 없습니다. 각자 식당가셔서 드시기 바랍니다.</td>
+                    <td>Egg Toast</td>
+                    <td>Egg Sunrise</td>
+                </tr>
+                <tr class="align-top">
+                    <th>2</th>
+                    <td class="text-start">저희 여행은 아무것도 먹을 것이 없습니다. 각자 식당가셔서 드시기 바랍니다.</td>
+                    <td>Cruise Meat</td>
+                    <td>Wine and Cheese</td>
+                </tr>
+                <tr class="align-bottom">
+                    <th>3</th>
+                    <td class="text-end">저희 여행은 아무것도 먹을 것이 없습니다. 각자 식당가셔서 드시기 바랍니다.</td>
+                    <td>T-bone Steak</td>
+                    <td>Japan Ramen</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

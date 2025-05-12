@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<!-- 외부 CSS 파일 연결 -->
+<link rel="stylesheet" href="/Styles/mainstyles.css">	
+
+
+</head>
+<body>
+	<!-- 상단 헤더 -->
+	<header class="header">
+		<div class="header-left">
+			<!-- 사이트명을 클릭 시 메인 페이지로 이동 -->
+			<a href="/Psychology/main" style="text-decoration: none; color: white;">
+				<h1 class="site-name">Maind G</h1>
+			</a>	
+		</div>	
+		
+		<div class="header-middle">
+			<p>Website: www.maindgoal.com | Email: shan334@naver.com | Phone: 0504-0824-7552
+		</div>
+		
+		<div class="header-right">
+			<!-- 로그인하지 않은 경우 -->
+			<div th:if="${id == 'anonymousUser'}">
+				<button class="nav-btn" onclick="location.href='/Psychology/main'">홈</button>
+				<button class="nav-btn" onclick="location.href='/login'">로그인</button>
+				<button class="nav-btn" onclick="location.href='/join'">회원가입</button>
+			</div>	
+			
+			<!-- 로그인한 경우 -->
+			<div th:if="${id != 'anonymousUser'}">
+				<p th:text="|환영합니다, ${id}님!|"></p>
+				<button class="nav-btn" onclick="location.href='/Psychology/main'">홈</button>
+				<form th:action="@{/logout}" method="post">
+					<button class="nav-btn" type="submit">로그아웃</button>
+				</form>	
+			</div>
+			
+			<!-- 로그인한 사용자가 admin이면 관리자 버튼 추가 -->
+			<button class="nav-btn" th:if="${role == 'ROLE_ADMIN'}" onclick="location.href='/admin'">관리자</button>
+			
+		</div>
+	</header>
+</body>
+</html>

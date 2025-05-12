@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Modify</title>
+<style>
+	input {
+		border-width: 0 0 3px;
+		outline: none;
+	}
+</style>
+</head>
+<body>
+	<form action="/board/modify" method="post">
+		<p>제목 : <input type="text" th:field="${board.title}"></p>
+		<p>내용 : <input type="text" th:field="${board.content}"></p>
+		<p>저자 : <input type="text" th:field="${board.writer}"></p>
+		<button>수정완료</button>
+	</form>
+</body>
+</html>

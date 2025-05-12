@@ -1,0 +1,63 @@
+package com.koreait.board.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.koreait.board.bean.BoardVO;
+import com.koreait.board.mapper.AttachFileMapper;
+import com.koreait.board.mapper.BoardMapper;
+
+@Repository
+public class BoardDAO {
+	
+	@Autowired
+	private BoardMapper mapper;
+	
+	@Autowired
+	private AttachFileMapper fmapper;
+	
+	// getList
+	public List<BoardVO> getList(){
+		return mapper.getList();
+	}
+	public List<BoardVO> getListWithKey(String type, String keyword){
+		return mapper.getListWithKey(type, keyword);
+	}
+	
+	// register(insert)
+	public int register(BoardVO board) { 
+		int result = 0;
+		
+		result = mapper.insertSelectKey(board);
+		if(board.getAttachFile() != null) {
+			board.getAttachFile().forEach(attach -> {
+				attach.setBno(board.getBno());
+				fmapper.insert(attach);
+			});
+		}
+		
+		return result;
+	}
+
+	// read
+	public BoardVO read(Long bno) {
+		return mapper.get(bno);
+	}
+	
+	// modify
+	public int modify(BoardVO board) {
+		return mapper.update(board);
+	}
+	
+	// remove
+	public int remove(Long bno) {
+		return mapper.delete(bno);
+	}
+	
+	// 첨부파일 읽기
+	public List<AttachFileVO> getAttachList(Long bno){
+		return fmapper.findByBno();
+	}
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <title>function</title>
+</head>
+<body>
+    <h1>Functions</h1>
+</body>
+<script>
+    // 1부터 10까지 출력하는 함수
+    function printOneToTen(){                           // printOneToTen 함수 정의
+        for(let i = 0; i <= 11; i++){
+            console.log("[printOneToTen] " + i);        // 현재 반복중인 값 추력
+        }
+    }
+
+    var result = printOneToTen();                       // printOneToTen() 호출 후 반환값을 result에 저장
+    console.log(result);                                // 콘솔창에 result 출력 (undifined)
+
+    // 1부터 10까지의 합을 출력하는 함수
+    function printTot(){                                // printTot 함수 정의
+        var tot = 0;                                    // 합을 저장할 변수
+        for(let i = 0; i <= 10; i++){                   // 1부터 10까지 1씩 증감하며 반복 
+            tot = tot + i;                              // 반복하며 현재 값을 tot에 더해줌(누적)
+        }
+        console.log("[printTot] " + tot);               // tot의 결과값 출력
+    }
+
+    printTot();                                         // printTot함수 호출
+
+    // 숫자 N을 입력받아 1부터 N까지 더해서 출력하는 함수를 작성해 보세요.
+    function printTotN(N){
+        var tot = 0;                                    // 합을 저장할 변수
+        for(let i = 1; i <= N; i++){
+            tot = tot + i;                              // 현재값 i를 tot에 누적
+        }
+        console.log("[printTotN] " + tot);
+    }
+
+    printTotN(30);                                      // printTotN함수에 "30"을 전달하여 호출
+
+    // overloading을 지원하지 않는다.
+    // 마지막 함수의 내용으로 결정
+    function add(num1, num2){                           // 두 개의 매개변수를 받는 add 함수 정의
+        console.log("num1 = " + num1);                  
+        console.log("num2 = " + num2);
+        return num1 + num2;                             // num1 + num2 결과값을 리턴
+    }
+    document.write("<h1>[add(a,b)] " + add(1,3) + "</h1>");     // add(1,3)을 호출하고 결과를 페이지에 출력
+
+    function add(num1, num2, num3){                     // 세 개의 매개변수를 받는 add 함수 정의
+        console.log("num3은 무엇인가?" + num3);          // 세번째 인자 출력, num3을 초기화 하지 않았기 때문에 undifined
+        if(num3 == undefined){                          // num3이 전달되지 않았다면?
+            num3 = 0;                                   // num3은 0으로 기본값 설정
+        }
+        return num1 + num2 + num3;                      // 세 개의 인자의 총 합을 리턴
+    }
+    document.write("<h1>[add(a,b,c)]" + add(1,3,5) + "</h1>");          // add(1,3,5)함수 호출하여 결과를 페이지에 출력
+
+    // 몇 개를 입력할 지 모르는데 다 더하라고 한다.
+    function addN(...nums){                                                 // nums는 전달받은 모든 인수를 배열로 받음
+        console.log(typeof(nums));                                          // nums의 자료형 출력(object)
+        console.log("사용자 분이 " + nums.length + "개로 호출하였음");        // 전달받은 nums의 개수 출력  
+        let tot = 0;                                                        // 합을 저장할 변수 선언
+        for(let i = 0; i < nums.length; i++){                               // 전달받은 인수 배열 순회
+            tot += nums[i];                                                 // tot에 현재 인수를 더함
+        }
+        return tot;                                                         // tot의 결과값 리턴
+    }
+    document.write("<h1>[addN()] " + addN(1,1263,176312,111,8) + "</h1>");  // addN 함수 호출 후 결과를 페이지에 출력
+    
+    // 첫 번째 인자는 학교 이름, 두 번째 인자부터는 학생들 이름 N개
+    function reserveTraining(schoolName, ...names){
+        document.write("<h1>" + schoolName + "학생들 환영합니다.</h1>");
+        document.write("<h1>이제까지 무사히 나간 학생이 없습니다.</h1>");
+        for(let i = 0; i < names.length; i++){
+            document.write("<h2>" + names[i] + "</h2>");
+        }
+    }
+
+    reserveTraining("화산고", "제임스박", "샤론김", "메이슨");
+
+    
+    // 번외 테스트 : 여러 개의 리턴을 하고 싶다.
+    function test(){
+        return 1,2,3,100;                                   // return 문에서 콤마 연산자를 사용할 경우, 나열된 표현식 중 마지막 표현식의 값만 반환
+    }                                                       // 여러 값을 반환하려면 배열 사용, 콤마 대신 배열을 반환하면 가능
+    hmm = test();
+    console.log(hmm);
+
+    // 여러 개를 리턴하고 싶으면 배열에 넣어서 한번에
+    function returnMulti(a, b, c){
+        var array = new Array();                            // 배열 생성
+        array.push("a는 " + a);                             // a값을 배열에 추가
+        array.push("b는 " + b);                             // b값을 배열에 추가
+        array.push("c는 " + c);                             // c값을 배열에 추가
+        return array;
+    }
+    var x = returnMulti("Ohtani", "Aaron", "Hasung");       // "x" : returnMulti함수 호출 결과 저장
+    console.log("[returnMulti] " + x);                      // 배열 출력
+    console.log("typeof(x) " + typeof(x));                  // x의 자료형 출력(object)
+
+</script>
+</html>

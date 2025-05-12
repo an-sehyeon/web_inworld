@@ -1,0 +1,10 @@
+spring.application.name=board
+
+server.port=10001
+
+# JDBC Config
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+spring.datasource.jdbc-url=jdbc:mariadb://localhost:9933/web
+spring.datasource.username=root
+spring.datasource.password=1234
+

@@ -1,0 +1,18 @@
+https://us06web.zoom.us/rec/share/ZMMQe8A6sewbc5EOZY6geQ4NdnZxijWsdTtOHofb-61ES1EoHBbJd34hlsnt9Vds.8BVAFDXXCA7uD9BA 
+암호: &x6C$#z9
+
+1. 주요 데이터 제공 사이트
+
+    (1) 공공데이터 포털
+    www.data.go.kr
+
+    (2) kaggle의 datesets
+        www.kaggle.com
+
+    (3) 미국의 정부에서 관리하는 데이터    
+        www.data.gov
+
+    (4) KD nuggets
+        kdnuggets.com    
+
+        1.57.10

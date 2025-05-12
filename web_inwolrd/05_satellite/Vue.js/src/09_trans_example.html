@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <title>C to F</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Celsius vs. Fahrenheit</h1>
+    <hr>
+    <div id="calc">
+        <!-- @change = "setC" : 바뀌면 setC를 호출--->
+        <input type="number" @change="setC"     
+            :value="C">섭씨 = 
+        <!-- @change = "setF" : 바뀌면 setF를 호출--->    
+        <input type="number" @change="setF"
+            :value="F">화씨
+    </div>
+</body>
+<script>
+    var cal = new Vue({
+        el:'#calc',
+        data:{
+            C:0,
+            F:32
+        },
+        methods:{
+            setC:function(e, c = e.target.value){
+                console.log(e);
+                this.C = c;
+                this.F = c * (9 / 5) + 32;
+            },
+            setF:function(e, f = e.target.value){
+                console.log(e);
+                this.F = f;
+                this.C = (f - 32) * (5/9);
+            }
+        }
+    })
+</script>
+</html>

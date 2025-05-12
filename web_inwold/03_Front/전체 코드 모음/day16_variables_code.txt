@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>let, const</title>
+</head>
+<body>
+</body>
+<script>
+    f1();
+
+    function f1(){
+        console.log("F1 called");
+    }
+
+    // 초기화 작업(값 할당 제외)만 호이스팅
+    // 변수는 변수명만 호이스팅됨
+    console.log("#1 data1 = " + data1);
+    var data1 = 1000;
+    console.log("#2 data1 = " + data1);
+
+    // const
+    const goldenRule = "I'm the King";
+    // goldenRule = "No, You're not. I'm the King";
+
+    // let
+    let doctrine = "나는 꿈이 있어요";
+    doctrine = "나는 꿈이 없어요";
+    console.log("#3 doctrine : " + doctrine);
+
+    for(let i=0; i<100; i++){
+        ;
+    }
+    // console.log("#4 i after for : " + i);
+    // for문 안에서 사용된 let 변수는 for문 종료 시 사라짐
+
+    if(10 > 1){
+        let data2 = 10.37;
+    }
+    // console.log("#5 data2 : " + data2);
+    // if문 안에서 사용된 let 변수는 if문 종료 시 사라짐
+
+    // 번외(선언을 해야 사용할 수 있는 기능)
+    var man = [];
+    man.name = "James";
+    man.cry = function(){ console.log("I'm Crying"); };
+    console.log("#6 man.name : " + man.name);
+    man.cry();
+
+</script>
+</html>

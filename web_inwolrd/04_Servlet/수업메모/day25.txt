@@ -1,0 +1,55 @@
+https://us06web.zoom.us/rec/share/K05qUB03pbmd8QdsOqZ2f8dxB_4SlXt81aGEeDjK8sKFY9AoZBOhQ0iX0eB9CEGf.gBAc2_WD-_pPcCnI
+*t$d%1C*
+
+1. 기본 개념 정리
+    (1) Server(서버)
+        - Client(사용자)의 요청(request)에 맞는 서비스를 제공하는 것
+        - 요청(request) <-> 응답(response)
+
+    (2) httpd
+        - 클라이언트의 요청을 인식하는 프로그램
+        - 요청을 웹 서버에 전달
+        - 스레드 스케쥴링
+
+    (3) web
+        - 페이지 요청과 응답이 일어나는 장소
+        - 인터넷에 연결된 컴퓨터들을 통해 정보를 공유하는 공간
+
+    (4) web server(http) : 아파치(Apache)
+        - 사용자의 요청이 정적인지 동적인지 판단
+        - 정적이면 준비되어 있는 리소스(html, img, css, js, font)
+        - 동적이면 웹 컨테이너에 요청을 보냄
+
+    (5) 웹 컨테이너(Server Container)
+        - 사용자의 동적 데이터를 servlet, jsp로 연산하거나 제어하며 DB 접속 등을 통해 정제된 데이터로 가공하여 응답
+
+    (6) WAS(Web Application Server) : 톰캣(Tomcat)
+        - 동적 데이터를 처리할 서블릿들을 메모리에 할당
+        - 서블릿에 대한 스레드 생성
+        - 요청, 응답 객체를 생성하여 서블릿에 전달
+
+
+2. OrderServlet을 통해 파라미터 처리 연습
+
+
+3. JSP(Java Server Page)
+    - HTML을 중심으로 Java와 연동하여 사용하는 웹 언어
+    - HTML안에 Java 코드를 작성할 수 있는 언어
+
+    * 서블릿에서 HTML을 작성하는 것은 매우 번거롭기 때문에
+      JSP에서 Java코드를 작성하는 것이 편하고 자주 사용됨
+
+    (1) 스크립트 태그(script tag)
+        - HTML 코드에 Java 코드를 넣어 프로그램이 수행하는 기능을 구현
+
+        1) 선언문(declaration)
+            - <%! ~%>
+            - 자바 변수나 메서드 정의에 사용
+
+        2) 스크립틀릿(scriptlet)
+            - <% ~ %>
+            - 자바 변수 선언 및 자바 로직을 작성할 때 사용
+
+        3) 표현식(expression)
+            - <%= ~ %>
+            - 값을 직접 지정할 경우 주로 사용

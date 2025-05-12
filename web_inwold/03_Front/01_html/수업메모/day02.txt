@@ -1,0 +1,77 @@
+https://us06web.zoom.us/rec/share/H2DwRmHBSO9MmWCHA6lKEkRbSF1VpEi_uFz2xUCcP80db10HmkCjuaxka9jiTQlu.GTeF6tHxdnTMRL86
+NLdfG8w?    
+
+1. HTML, CSS, Javascript
+    (1) 웹 페이지 구성의 3요소
+        - 웹 페이지 구성(구조)와 내용 : HTML
+        - 웹 페이지의 모양 : CSS(Cascading Style Sheet)
+        - 웹 페이지의 행동 및 응용 : Javascript
+
+
+    (2) HTML5
+        - 표준화된 태그로 웹 페이지를 작성하는 언어
+          (프로그래밍 언어X)
+          <img>, <hr>, <table>, <li>
+        - 비표준 기술의 혼재, 웹 브라우저의 비호환성
+          ActiveX, 플러그인, 플래시 등 비표준 기술 난립
+        - 인터넷 기기의 다양화
+          PC, Mobile 등에서 모두 웹을 사용
+          기존 페이지가 Mobile에서 동작하지 않음
+          -> 새로운 웹 표준의 필요성 -> HTML5 + CSS3
+
+
+    (3) HTML과 웹 표준
+        1) HTML(HyperTextMarkup Language)
+            - 웹 페이지에서 다른 페이지로 이동 가능한 마크업 언어
+            - 마크업 언어 : 태그 방식으로 문서나 데이터의 구조를 기술하는 언어
+
+
+        2) CSS
+            - 구체적으로 어떤 스타일로 요소가 표현될 것인가를 정하는 규칙
+            - HTML로 문서 구조 및 꾸미기를 할 수도 있으나, 동일한 디자인을 사용한 페이지가 여러 개 있다면
+              변경 시 모두 다 수정해야 함
+
+
+        3) XHTML(Extensible HTML)
+            - XML 기반으로 만들어졌으며 지원되지 않는 브라우저가 있음
+
+
+        4) XML(Extensible Markup Language)
+            - 태그로 데이터를 설명
+
+
+
+
+2. HTML의 요소
+    <p> My Name is none. </p>
+     1  2                 3
+
+     1 : Opening Tag - 요소 이름과 <>로 구성
+     2 : Contets(text) - 요소의 내용이며 단순 텍스트
+     3 : Closing Tag - /를 이용하여 태그를 종료   
+
+
+
+
+3. Nested Element(중첩 요소)
+    - 요소 안에 다른 요소가 들어가는 형태
+      <p>I'm <strong>very</strong>happy.</p>
+
+
+
+4. Paragraph(단락)
+    <p> 태그로 단락을 표현
+    <h1> ~ <h6> 단락의 제목 태그
+
+
+
+5. 서식 태그
+    <strong>, <b> : 굵은 글씨체
+    <em>, <i> : 이탤릭체
+    <mark> : 하이라이트
+    <del> : 취소선
+    <ins> : 밑줄
+    <sup>, <sub> : 위 첨자, 아래 첨자
+
+=> day02_paragraph.html 참조
+

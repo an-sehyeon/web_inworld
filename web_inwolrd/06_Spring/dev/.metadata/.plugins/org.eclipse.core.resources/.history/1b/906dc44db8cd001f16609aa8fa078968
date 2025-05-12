@@ -1,0 +1,8 @@
+package com.koreait.board.dao;
+
+@SpringBootTest
+@Slf4j
+public class BoardDAOTest {
+
+	
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<!-- 외부 CSS 파일 연결 -->
+<link rel="stylesheet" href="/Styles/mainstyles.css">	
+
+
+</head>
+<body>
+	<!-- 상단 헤더 -->
+	<header class="header">
+		<div class="header-left">
+			<!-- 사이트명을 클릭 시 메인 페이지로 이동 -->
+			<a href="/sportspsychology/main" style="text-decoration: none; color: white;">
+				<h1 class="site-name">Maind G</h1>
+			</a>	
+		</div>	
+		
+		<div class="header-middle">
+			<p>Website: www.maindgoal.com | Email: shan334@naver.com | Phone: 0504-0824-7552
+		</div>
+		
+		<div class="header-right">
+			<button class="nav-btn" onclick="location.href='/Psychology/mainpage'">홈</button>
+			<button class="nav-btn" onclick="location.href='/Psychology/login'">로그인</button>
+			<button class="nav-btn">관리자</button>
+		</div>
+	</header>
+</body>
+</html>

@@ -1,0 +1,21 @@
+package com.koreait.board.mapper;
+
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.koreait.board.bean.AttachFileVO;
+
+
+@Mapper
+public interface AttachFileMapper2 {
+	// insert를 하는 기능
+	public void insert(AttachFileVO vo);
+	
+	// 불러오는 기능
+	public List<AttachFileVO> findByNmo(long bno);
+	
+	
+	
+}

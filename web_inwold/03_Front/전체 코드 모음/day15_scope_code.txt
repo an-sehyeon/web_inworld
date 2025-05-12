@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Variable Scope</title>
+</head>
+<body>
+    <h1>Java Variable Scope</h1>
+</body>
+<script>
+    if(10 > 1){
+        var data1 = 10;  // data1은 지역변수 같지만 전역변수
+    }
+    console.log("#1 : " + data1);
+
+    for(var i=0; i<10; i++){  // 반복문에서 선언된 변수도 전역
+        console.log("야 이 바보야" + i);
+    }
+    console.log("#2 : " + i);
+
+    // typeof
+    var x = 500.38;
+    console.log(typeof(x));
+    x = "cuba";
+    console.log(typeof(x));
+    x = 500;
+    var zz = 5000;
+
+    function f(){
+        var y;
+        x = 10;
+        y = 10;
+        z = 10;
+        zz = 5;
+        var zz;
+        zz = 10000;
+        console.log("#3 : " + zz);
+    }
+
+    f();
+    console.log("#4 x : " + x);
+    // console.log("#5 y : " + y);
+    console.log("#6 z : " + z);
+    console.log("#7 zz : " + zz);
+
+</script>
+</html>

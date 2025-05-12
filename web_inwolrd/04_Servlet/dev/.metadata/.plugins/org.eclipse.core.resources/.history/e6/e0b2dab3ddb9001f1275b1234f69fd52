@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+</head>
+<body>
+	<h1>Welcome to My Page!!</h1>
+	<hr>
+	<!-- JSP declaration Tag -->
+	<%!
+		int count = 10;
+		String color = "magenta";
+		String makeLower(String data) {				// 소문자 만들기
+			return data.toLowerCase();
+		}
+	%>
+</body>
+</html>

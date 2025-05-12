@@ -1,0 +1,13 @@
+Day11
+
+1. Board 게시판 구현
+    (1) read.html에서 수정하기 버튼 -> modify.html
+    (2) modify 서비스에서 modify.html로 boardVO를 전송
+    (3) list에서 검색 기능 추가
+        getListWithKey(String, String) 구현
+        mapper.xml에서 criteria(공통부분) 작성 후 include
+        => where 1 = 1 또는 where bno > 0  같은 의미없는 부분을 넣는 이유는 and로 사용하기 위해
+
+
+    => 게시판 추가 기능
+        - 첨부 파일 

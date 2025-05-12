@@ -1,0 +1,54 @@
+package com.korea.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/Order")								// 
+public class OrderServlet extends HttpServlet {
+
+		// ANSI 색상 코드 정의
+		private final String RED = "\033[91m";		// 빨강
+		private final String GREEN = "\033[92m";	// 초록
+		private final String END = "\033[0m";		// 색깔 끝내기
+		
+		
+		protected void doGet(HttpServletRequest request,
+							 HttpServletResponse response)
+					throws ServletException, IOException {
+			System.out.println(RED + "[OrderServlet] Called" + END);
+					
+			response.setContentType("text/html; charset=UTF-8");
+			
+			// remen, price, location을 입력으로 받는다면 
+			String food = request.getParameter("ramen");
+			String loc = request.getParameter("location");
+			int price = Integer.parseInt(request.getParameter("price"));				// 문자열을 숫자로 바꿈
+			
+			System.out.println(food + ":" + loc + ":" + price);
+			
+			PrintWriter out = response.getWriter();
+			out.println("<html><body>");
+			out.println("<h1>손님께서 주문하신 내역</h1><hr>");
+			out.println("<h2> 라면 : " + food );
+			
+			if(loc.equals("니네집")) {										// 문자열끼리 비교, loc에 "니네집" 입력 시
+				System.out.println("니네집");									
+				out.println("<h2>니네집인데 공짜지</h2>");						// 해당 문자열 출력	
+			}
+			else if(loc.equals("융프라우")) {									// loc에 "융프라우" 입력 시
+				out.println("<h2>가격은 " + price * 10 + "원입니다.</h2>");	// 해당 코드 실행
+			}
+			else {															// 위 조건에 모두 포함되지 않는다면?
+				out.println("<h2>안팔아</h2>");								// 문자열 출력
+			}
+			
+			out.println("</body></html>");
+
+		}
+}

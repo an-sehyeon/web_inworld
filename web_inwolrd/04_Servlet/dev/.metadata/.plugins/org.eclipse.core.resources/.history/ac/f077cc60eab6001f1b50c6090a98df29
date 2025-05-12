@@ -1,0 +1,21 @@
+package com.korea.servlet;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet("/MyServlet")
+public class MyServlet extends HttpServlet{			
+	
+	public MyServlet() {					// 생성자
+		 super();							// HttpServlet
+		 System.out.println("MyServlet Created");
+	}
+	
+	// GET 방식으로 호출하면 반드시 doGet(HttpServlet이 가지고있는 함수)이 호출됨
+	protected void doGet(GttpServletRequest request,
+						 HttpServletResponse response)
+	throws ServletException, IOException {
+		System.out.println("[MyServlet] Get Called");
+	}
+	
+}

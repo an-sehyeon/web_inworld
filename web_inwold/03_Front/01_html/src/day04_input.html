@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>inputs</title>                                                       <!-- 타이틀명 -->
+</head>
+<body>
+    <!-- 텍스트 입력 -->
+    <h3>사용자 정보 입력</h3>                                                    <!-- h3폰트크기 설정, 단락 -->
+    이름 : <input type="text" value="이름없음"><br>                              <!-- 사용자로부터 일반 텍스트 타입의 값을 입력받기 위함, 입력하기전 "이름없음" 값 표시-->
+    계정 : <input type="text" placeholder="여기에 아이디 넣어"><br>               <!-- 사용자가 입력하기 전 문자열을 보여줌 -->  
+    <label>암호 :</label> <input type="password"><br>                           <!-- 사용자로부터 비밀번호를 입력받기 위함 -->
+    <label>암호확인 :</label> <input type="password"><br>
+    <hr>                                                                        <!-- 밑줄 -->
+
+    <!-- radio 버튼 -->
+    <h3>저녁 메뉴를 고르시오</h3>                                                 <!-- h3폰트크기 설정, 단락 -->
+    <label>스파게티<input type="radio"name="dinner"></label>                     <!-- radio : 선택지 중 하나만 선택 가능-->
+    <label>빠에야<input type="radio"name="dinner"></label>
+    <label>짜파구리<input type="radio"name="dinner"></label>
+    <hr>
+    <!-- checkbox -->
+    <h3>관심은 없지만 당신의 취미는 무엇인가요?</h3>
+    <label>독서<input type="checkbox"checked></label>                           <!-- checkbox : 여러 선택이 가능한 체크 박스, checked : 체크박스를 기본적으로 선택된 상태로 표시-->
+    <label>요리<input type="checkbox"></label>
+    <label>수영<input type="checkbox"></label>
+    <hr>
+
+    <!-- file, color -->
+    <h3>극비문서 파일 업로드</h3>
+    <input type="file">
+    <input type="color">
+    <hr>
+
+    <!-- number -->
+    <h3>한 번 짝수 입력을 해보십시오.</h3>                                       
+    <input type="number" value="0" min="0" max="100" step="2"                                                            
+    >
+    <!-- number(min, max, step)타입 : 숫자 크기를 조정하는 상하버튼 -->
+    <!-- 숫자 입력 필드 타입 지정 -->
+    <!-- value="1" : 초기 값을 1로 설정 -->
+    <!-- min="1" : 입력 가능한 최소 값을 1로 제한 --> 
+    <!-- max="100" : 입력 가능한 최대 값을 100으로 제한 -->
+    <!-- step="2" : 증가 단위를 2로 설정 -->
+    <hr>
+
+    <!-- button -->
+     <h3>제출하면 돌이킬 수 없을 겁니다.</h3>
+     <button>반도체기술유출</button><br>                                        <!-- button의 이름 -->
+     <input type="button" value="반도체기술유출"><br>                           <!-- button타입 : 아무 동작도 하지 않은 일반적인 버튼 -->
+     <input type="submit" value="반도체기술유출진짜">                           <!-- submit타입 : 버튼을 클릭하면 해당 버튼이 속한 폼(form)을 서버로 제출 -->
+     <hr>
+
+     <!-- select box -->
+     <h3>저녁 디저트를 고르시오</h3>
+     <select>                                                                  <!-- select 태그 : 드롭다운 선택 메뉴를 만드는 컨테이너 -->
+            <option>사과</option>                                              <!-- option 태그 : 드롭다운의 각 항목을 나타냄 -->
+            <option>딸기</option>   
+            <option selected>멜론</option>                                      <!-- selected 태그 : 드롭다운 메뉴가 처음 표시될 때 기본적으로 선택된 항목으로 설정-->        
+            <option>수박</option>
+     </select>
+     <hr>
+
+     <!-- textarea -->
+     <!-- 여러 줄의 대량 텍스트 입력을 받기 위한 영역
+     get으로 데이터를 전달하면 위험함 -->
+     <h3>선생님께 하고 싶은 말을 적으시오(욕 가능)</h3>                           <!-- textarea 태그 : 여러 줄의 텍스트를 입력할 수 있는 필드를 생성 -->
+     <textarea cols="100" rows="10"></textarea>                                <!-- cols : 텍스트 영역의 너비를 설정(한줄에 최대 100개문자), rows : 텍스트 영역의 높이 설정(10개의 줄) --> 
+     <hr>
+
+     <!-- progress bar -->                                <!-- progress bar 태그 : 진행 표시를 표시하는 태그, 주로 파일 업로드, 다운로드, 작업 진행 등의 상태를 사용자에게 보여줄 때 사용 -->
+    <h3>내 영화 손익분기점 달성율</h3>
+    <progress value="50" max="100"></progress><br>        <!-- value : 현재 진행 상태 설정, max : 최대값 설정-->                      
+    <input type="range" min="0" max="100">                <!-- range타입 : 슬라이더 형태의 입력 필드를 만들어, 사용자가 값의 범위 안에서 선택할 수 있도록 함 -->
+    <br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<!-- 외부 CSS 파일 연결 -->
+<link rel="stylesheet" href="/Styles/mainstyles.css">	
+
+
+</head>
+<div th:replace="~{/include/header}"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<body>
+	
+	<!-- 로그인 여부에 따라 다른 내용 표시 -->
+	
+	<!-- 로그인한 사용자인 경우 -->
+	<div th:if="${id != 'anonymousUser'}">
+		<h1 th:text="'환영합니다, ' + ${id} + '님!'"></h1>
+		<p th:text="'권한: ' + ${role}"></p>
+		<button onclick="locationhref='/logout'">로그아웃</button>
+	</div>
+	
+	<!-- 로그인하지 않은 사용자인 경우 -->
+	<div th:if="${id == 'anonymousUser'}">
+		<h1>환영합니다!</h1>
+		<p>로그인 후 서비스를 이용할 수 있습니다.</p>
+		<button onclick="location.href='/login'">로그인</button>
+	</div>
+
+	<div class="top-buttons">
+		<button class="main-btn">심리진단테스트</button>
+		<button class="main-btn">온라인상담</button>
+	</div>
+	
+	<hr class="divider">
+	
+	<!-- 고정된 창 -->
+	<aside class="floating-menu">
+		<button class="floating-btn">온라인상담</button>
+		<button class="floating-btn">상담예약</button>
+		<button class="floating-btn"></button>
+	</aside>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	
+</body>
+</html>

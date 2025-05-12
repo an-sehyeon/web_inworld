@@ -1,0 +1,23 @@
+
+1. Vue.js 기초 문법
+    (2) Directives(Cont'd)
+        5) v-model
+            - 양식에 대한 입력과 앱 상태를 양방향으로 바인딩
+
+    (3) Component
+        - 코드 재사용을 위해 각 단위를 독립적으로 구성하는 것
+            생성 방법
+            Vue.component('컴포넌트명', 내용)
+            Vue.component('todo-item',{
+                templage: '<li>오늘의 할 일</li>'
+            });
+
+            <ul>
+                <todo-item></todo-item>
+            </ul>
+
+    (4) methods, computed, watch
+        methods : 실행할 때마다 실행되는 함수 모음
+        computed : 변수의 값이 변하지 않으면 다시 실행하지 않고 caching된 값을 그대로 리턴
+        watch : 특정한 변수의 값이 변경되는지 모니터링
+        

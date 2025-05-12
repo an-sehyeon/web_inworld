@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Modify</title>
+</head>
+<body>
+	<div>
+	<p>제목 : <input type="text" value="[[${board.title]]"></p>
+	<p>내용 : <input type="text" value="값"></p>
+	<p>저자 : <input type="text" value="값"></p>
+	
+	
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+Day08
+
+
+1. BoardDAO를 생성하고 getList(), register() 생성
+
+2. BoardDAOTest를 생성하고 dao의 getList, register 테스트
+
+3. BoardMapper에 get(Long bno) 기능을 구현한다(실습)
+
+4. BoardMapperTest를 통해 get 기능 점검(실습)
+
+5. BoardDAO에 read(Long bno) 기능을 구현한다(실습)
+
+6. BoardMapperTest를 통해 read 기능 점검(실습)
+
+7. BoardController 작성
+
+8. resource/board/register.html 작성
+
+9. 글쓰기 기능 동작 확인
+
+10. 업데이트 기능 구현
+    - BoardMapper.java : update()
+    - BoardDAO.java : modify()
+    - 두 가지 작성 후 test까지 완료
+
+
+    [일반적으로 동작하는 순서]
+        사용자 요청 -> Controller   : 사용자가 웹 요청(HTTP)을 보냄  
+        Controller -> DAO          : DAO를 호출하여 필요한 데이터를 가져오거나 저장하도록 요청 
+        DAO -> Mapper              : Mapper를 통해 데이터베이스에 접근하여 작업 수행
+        Mapper → DAO → Controller → 사용자 : 데이터베이스에서 작업한 결과를 순차적으로 반환하여, 최종적으로 사용자에게 응답
+
+
+    1. Mapper (MyBatis)
+        역할
+            - 데이터베이스와 직접 상호작용하는 계층
+            - SQL 쿼리를 실행하고 결과를 반환
+            - 데이터베이스에서 데이터를 읽거나 쓰는 역할
+
+            구성 요소 : Mapper 인터페이스, XML 파일에 정의된 SQL 쿼리
+
+
+    2. DAO (Data Access Object)
+        역할
+            - Mapper를 호출하여 데이터베이스 작업을 처리하는 계층
+            - DAO 내부에서 Mapper를 호출하여 작업 처리
+            - 데이터베이스와의 의존성을 캡슐화하여 비즈니스 로직과 분리
+
+
+    3. Controller
+        역할
+            - 사용자의 요청을 받아 적절한 서비스를 호출하고, 응답을 반환하는 계층
+            - 클라이언트(웹 브라우저, REST API 호출)와 상호작용하는 역할

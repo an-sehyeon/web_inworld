@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <h1>Form Component</h1>
+    <hr>
+    <div id="formtest">
+        <!-- String -->
+        <input type="text" v-model="message" placeholder="이곳에 String을 입력하시오.">     <!-- placeholder : 초기 값 -->
+        <p>입력된 메시지 : {{ message }}</p>
+        <textarea v-model="message2"></textarea> 
+        <span>입력된 여러 줄의 메시지</span>
+        <p>{{ message2 }}</p>
+
+        <!-- checkbox -->
+        <input type="checkbox" v-model="checkbox">
+        <label for="checkbox">{{ checkbox?'클릭함':'해제함' }}</label>
+        <br>여러분이 좋아하는 아티스트를 모두 고르시오.<br>
+        <hr>
+        <input type="checkbox" value="Picasso"
+            v-model="artist">Picasso&nbsp;&nbsp;
+        <input type="checkbox" value="Bach"
+            v-model="artist">Bach&nbsp;&nbsp;
+        <input type="checkbox" value="LedZep"
+            v-model="artist">Led Zepplin&nbsp;&nbsp;    
+        <br><span>현재 리스트 : {{ artist }}</span>
+        <hr>
+        <!-- radio -->
+        <span>오늘 저녁 뭐 사드릴까요?</span><br>
+        <input type="radio" v-model="dinner" value="y">양식
+        <input type="radio" v-model="dinner" value="h">한식
+        <input type="radio" v-model="dinner" value="j">중식
+        <br>당신의 선택 : {{ dinner }}
+        <hr>
+        <!-- select -->
+        <select v-model="selected">
+            <option disabled value="">Select One</option>
+            <option>Baseball</option>
+            <option>Volleyball</option>
+            <option>Basketball</option>
+        </select>
+        <br>오늘 볼 스포츠 : {{ selected }}
+        <br><br>
+        <select v-model="selected2" multiple>    
+            <option disabled value="">Select One</option>
+            <option>Baseball</option>
+            <option>Volleyball</option>
+            <option>Basketball</option>
+        </select> 
+        <br>오늘 볼 스포츠(들) : {{ selected2 }}
+        <br><br>
+        <select v-model="selected3">
+            <option v-for="sel in option3" v-bind:value="sel.value">
+                {{ sel.text }}
+            </option>
+        </select>
+        <br>오늘 들을 음악 : {{ selected3 }}
+        <hr>
+        당신의 현재 나이 : <input type="text" v-model.number="age"><br>
+        이 약을 먹으면 달라지는 나이 : {{ parseInt(age) + 3 }}<br>
+        이 약을 먹으면 달라지는 나이 : {{ age + 3 }}<br>
+        당신의 이름을 입력하시오 : <input v-model.trim="name"><br>  <!-- trim : 문자열 양 끝의 공백 을 없애는 기능 -->
+        당신의 이름은 : {{ name }}
+        <br><br><br><br><br>
+    </div>
+</body>
+<script>
+    var app9 = new Vue({
+        el: '#formtest',
+        data:{
+            message:'',
+            message2:'',
+            checked: false,
+            checkbox: false,
+            artist:[],
+            dinner: 'h',
+            selected:'',
+            selected2: [],
+            selected3: 'K',
+            option3: [
+                { text: 'K-Pop', value:'K'},
+                { text: 'Old-Pop', value:'O'},
+                { text: 'Newage', value:'N'}
+            ],
+            age:'',
+            name:''
+        }   
+    });
+</script>
+</html>

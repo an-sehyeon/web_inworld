@@ -1,0 +1,6 @@
+#Sun Dec 15 22:32:48 KST 2024
+__DEFAULT__=false
+expression=Select a workspace
+org.eclipse.help.ui.localSearch.master=true
+org.eclipse.sdk.Eclipse.master=true
+org.eclipse.sdk.Google.master=true

@@ -1,0 +1,9 @@
+package com.korea.servlet;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+@WebServlet("/Order")
+public class OrderServlet extends HttpServlet {
+
+}

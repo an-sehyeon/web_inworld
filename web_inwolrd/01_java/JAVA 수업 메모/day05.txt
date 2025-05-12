@@ -1,0 +1,72 @@
+Day5
+
+1. 조건문(Conditional Statement)
+
+    (1) if statement
+        1) 사용방법
+            if(조건1){      // ex) a > b && c < d
+                조건1이 true일 때 할 일;
+            } else if(조건2) {
+                조건1은 false, 조건2는 true일 때 할 일;
+            }
+            ...
+            else if(조건N) {
+                앞에 나온 모든 조건 false, 조건N은 true을 때 할 일;
+            }
+            else {
+                모든 조건 실패시 할 일;                               
+            }
+
+            다양한 케이스 존재
+            if
+            if  else
+            if  else if
+            if  else if     else
+
+    (2) switch
+        - 조건식의 결과가 아니라 값만으로 비교
+        - switch ~ case  
+        - if 문보다 속도가 빠름
+        사용방법)
+            switch(변수){
+                case 값1:
+                    값1일 때 수행할 문장;
+                    break;
+                case 값2:
+                    값2일 때 수행할 문장;
+                    break;
+                ...
+                default :
+                    모든 case에 해당하지 않을 대 수행할 문장;
+
+            }      
+
+2. 반복문(Loop Statement)
+    - loop, iteration, 뺑뺑이
+    - 어떤 작업을 반복해서 수행
+    - 100번 수행할 때 100줄 코딩?
+    - while, for, do- while
+
+    (1) while
+        - 특정 조건을 만족하는 동안(true) 수행
+        
+        - 형태
+            while(조건식) {
+                조건식이 true일 때 수행할 문장;
+            }
+        
+        - 예시
+            int i = 0;
+            while(i < 10 ){
+                Stystem.out.println(i);
+                i++;
+            }
+
+        - 참고
+            무한루프(Infinity Loop)
+            중단되지 않고 계속 수행
+            while(true) {
+                할 일;
+                if(탈출해도돼??)
+                    break;
+            }

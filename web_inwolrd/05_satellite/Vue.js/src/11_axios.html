@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <title>Axios Test</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<body>
+    <h1>Axios Users</h1>
+    <hr>
+    <div id="axiosdiv">
+        <button @click="getData">데이터 가져오기</button>      <!-- 버튼을 클릭하면 데이터를 가져옴 -->
+        <br>
+        <!--
+        <div>{{ users }}</div>
+        -->
+        <ul>
+            <li v-for="user in users">
+                {{ user.address }}                
+            </li>
+        </ul>
+        
+        <!-- 테이블로 구성 user의 이름과 회사명을 display하시오. -->
+        <table border="1">
+            <tr v-for="user in users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.company }}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+<script>
+    var app12 = new Vue({
+        el: '#axiosdiv',
+        data: {
+            users: '아무도 없네',
+            tname: 'd',
+            tcom: 'v'
+        },
+        methods: {
+            getData: function(){
+                var vm = this;
+                console.log("clicked");
+                vm.users = '아직도 없어. 있을 줄 알았냐?';
+
+                axios.get('https://jsonplaceholder.typicode.com/users/')
+                     .then(function(res){
+                        console.log(res);
+                        vm.users = res.data;
+                     });
+
+
+            }
+        }    
+    });
+</script>
+</html>

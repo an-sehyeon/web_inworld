@@ -1,0 +1,5 @@
+package com.sehyeon.psychology.service;
+
+public class CustomUserDetailsService {
+
+}

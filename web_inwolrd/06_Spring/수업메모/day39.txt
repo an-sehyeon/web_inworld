@@ -1,0 +1,17 @@
+Day03
+
+
+1. SpringBoot
+    - Spring의 각종 설정 요소들을 간편하게 관리
+    - 개발의 복잡성, 설정 난이도, 웹서버 + 빌드,배포
+        -> 이런 것들을 간편하게 처리
+
+
+2. 디렉토리 설명
+    - src/main/java : 서버단의 java 파일
+    - src/test/java : 단위 테스트 java 파일
+    - src/main/resources : 설정 파일 및 View
+    - resources/static : css, js, image, font 경로
+    - resources/template : html 파일 경로
+    - pom.xml : 라이브러리 의존성 관리
+    - application.properties : 서버 및 DB 설정 파일

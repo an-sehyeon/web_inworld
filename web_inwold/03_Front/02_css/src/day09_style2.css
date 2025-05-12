@@ -1,0 +1,55 @@
+body > div {                                            /* body밑에 직접적으로 있는 div의 배경색 설정 */
+    background-color: goldenrod;
+}
+
+body > p {                                              /* body밑에 직접적으로 있는 p의 배경색 설정 */
+    background-color: chocolate;
+}
+
+.div01 {                                                /* div01 클래스에 대한 스타일 설정 */
+    width: 300px;
+    height: 150px;
+    background-color: pink;
+    margin-bottom: 10px;                                /* div01 요소의 아래쪽 여백을 10px로 설정 */
+}
+
+
+.div02 {                                                /* div02 클래스에 대한 스타일 설정 */
+    /* display: inline; */                              /* 해당 요소를 인라인 요소로 설정, inline 요소에 대해 width나 height가 적용X, 크기는 자체 내용의 크기에 딱 맞춰짐 */
+    width: 300px;
+    height: 150px;
+    background-color: deepskyblue;
+    margin-bottom: 10px;
+}
+
+.span01 {                                               /* span01 클래스에 대한 스타일 설정 */
+    width: 300px;                                       /* span은 크기 설정x, 색 설정은 허용O */
+    height: 150px;
+    background-color: pink;
+}
+
+.span02 {                                               /* span02 클래스에 대한 스타일 설정 */
+    width: 300px;
+    height: 150px;
+    background-color: deepskyblue;
+}
+
+.span03 {                                               /* span03 클래스에 대한 스타일 설정 */
+    background-color: rgb(250, 230, 247);
+}
+
+.span04 {                                               /* span04 클래스에 대한 스타일 설정 */
+    display: inline-block;                              /* 해당 요소를 인라인 요소로 설정하면 크기 조정 가능, 줄 바꿈없이 다른 요소와 나란히 배치  */
+    height: 150px;
+    background-color: green;
+    font-family: Verdana;
+}
+
+a {                                                     /* <a> 스타일 설정 */
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.parent {                                               /* parent 클래스에 대한 스타일 설정 */
+    display: flex;                                      /* flex 속성으로 설정하면 block 속성의 엘리먼트들을 가로로 배치 */
+    background-color: darkmagenta;
+}

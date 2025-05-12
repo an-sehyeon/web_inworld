@@ -1,0 +1,52 @@
+
+1. CGI(Common Gateway Interface)
+    (1) CGI 이전 웹서버
+        - 사용자가 특정한 경로를 입력하면 리소스(웹페이지) 제공
+        
+    (2) CGI 
+        - 사용자로부터 입력을 인자(파라미터)로 받아 프로그램을 동작시켜 나온 결과를 웹으로 제공
+        - 웹 서버는 요청에 있는 주소가 유효한지를 확인하고 응답
+        - 웹 서버에서 동적인 페이지를 보여주기 위해 프로그램을 기동하는 기술
+
+    (3) CGI 동작 구조
+        1) 사용자의 요청(request)을 웹 서버로 전달
+        2) 웹 서버는 요청에 있는 주소가 CGI에 매핑되어 있는지 확인
+        3) 매핑이 없으면 오류, 매핑 성공 시 실행
+        4) 웹 서버는 CGI 프로그램이 표준 출력으로 보낸 내용을 사용자에게 돌려줌
+
+        static web : 기업 소개 페이지
+        dynamic web : 소셜 네트워크 페이지
+                      데이터가 움직이며 사용자의 행동에 민감하게 반응
+                      추천 알고리즘, 팔로우, 좋아요 등
+
+
+2. 서블릿(Servlet)
+    - 서버(Server) + 애플릿(Applet)
+    - Java 웹 서버로 웹 페이지를 제공할 때 동적 데이터 제공을 도와주는 역할
+    - 사용자님 반가워요 -> 앤더슨님 반가워요
+    - 동적 데이터 일을 도와주는 자바 소프트웨어 컴포넌트
+
+    (1) 프로세스
+        - 웹 브라우저는 request를 보내고 response를 받는다.
+        - 웹 브라우저 Request -> Servlet -> Response
+    
+    (2) 문자열의 해석(parsing)에 들어가는 시간을 줄이고 비즈니스 로직의 개발에 집중 가능
+
+
+3. 서블릿과 CGI의 차이점
+    - CGI는 브라우저가 웹 서버로 요청을 하면 각각 프로세스 생성
+        => 대량 접속 시에는 부하(load) 발생
+    - 서블릿은 프로세스를 별도로 만들지 않고, 요청 수신 시 내부의 Thread를 생성
+    - Thread의 개수가 일정 개수를 넘어가면 대기
+    - Thread끼리 공유할 수 있는 자원은 공유
+
+
+4. Eclipse로 최초의 서블릿을 만들기 위한 준비
+    - Eclipse 사이트에서 Eclipse IDE for Enterprise Java and Web Developers 다운로드
+    - eclipse.ini 파일에서 JDK Path(--vm 아랫줄 삭제) 교체
+    - dev 폴더를 기본으로 구동하도록 설정하고 시작
+    - 프로젝트 클릭 -> Build path -> Configure Build path -> Libraries -> Classpath 클릭 후 Add Library 클릭 -> Server Runtime
+
+5. MyServlet.java 개발
+    - HttpServlet 상속 + doGet, doPost 구현
+    - Post는 Chrome의 확장 프로그램인 Talend API Tester 사용
