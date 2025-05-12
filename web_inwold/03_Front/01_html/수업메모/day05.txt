@@ -1,4 +1,0 @@
-https://us06web.zoom.us/rec/share/lvJpb0lTMDH3A8c_nNkbIFIlAkRgs6_mLYIyqBzYXeRaOuSJjiVvaGuH5PX1zkY.v4XYbvcsd5rKXCkH
-sCE787&@
-
-1. input과 form을 통한 데이터 전송
