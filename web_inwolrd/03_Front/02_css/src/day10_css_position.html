@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>Position</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">                             <!-- google에서 font copy -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body > div > div {                          /* body(최상위 요소, 부모요소) > div(body의 바로 아래 자식 div요소) > div(첫 번째 div의 자식인 div요소, 해당 구조를 가진 div 요소에만 적용) */
+            width: 200px;
+            height: 150px;
+            background-color: lemonchiffon;
+            border: 1px solid orange;
+
+            font-family: "Nanum Pen Script";
+            font-size: 35px;
+
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .relative {                                 /* relative 클래스의 스타일 지정  */
+            position: relative;                     /* relative : 원래 내가 있어야 할 위치를 기준으로 위치 지정 */
+            top: -100px;                            /* 원래 위치에서 위로 100px만큼 이동 */
+            left: 150px;                            /* 원래 위치에서 오른쪽으로 150px만큼 이동 */
+            background: red;
+            z-index: 2;                             /* z-index : 요소가 쌓이는 레이어의 순서를 결정하는 css속성, 값이 클수록 화면의 앞쪽에 표시 */
+        }
+
+        .absolute {
+            position: absolute;                     /* absolute : 상위 엘리먼트의 기준점을 기준으로 위치 지정 */
+            top: 100px;
+            left: 100px;
+            background: yellow;
+            z-index: 10000;
+        }
+
+        .wrap {
+            background-color: green;
+            position: fixed;                        /* 요소를 화면에 고정, 스크롤을 해도 위치가 변하지 않고 화면의 동일한 위치에 고정됨 */
+            width: 100%;
+            top: 100px;
+            left: 20px;
+        }
+
+        .fixed {
+            position: fixed;
+            top:80px;
+            left: 60px;
+            background: blue;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Layout - Position</h1>
+    <hr>
+    <div class="wrap">                                              <!-- 클래스명이 wrap인 div 생성 -->
+        <div class="static">static(default)</div>                   <!-- 기본적인 static 위치 -->   
+        <div class="static2">static2(default)</div>                 <!-- 기본적인 static 위치 -->
+        <div class="relative">relative</div>                        <!-- relative 스타일-->
+        <div class="fixed">fixed</div>                              <!-- fixed 스타일-->
+        <div class="absolute">absolute</div>                        <!-- absolute 스타일-->
+    </div>
+</body>
+</html>

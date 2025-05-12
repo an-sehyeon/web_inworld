@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <title>Transition</title>
+    <style>
+        .box {                                                      /* box 클래스에 적용되는 스타일 설정 */
+            width: 500px;
+            height: 50px;
+            margin: 10px auto;                                      /* 상단 여백 10px, 좌우 여백 자동으로 설정 */
+            background: #68f;
+            transition: all 0.5c ease-in-out, transform 2s;         /* 모든 속성에 0.5초 전환, transform 효과는 2초에 걸쳐서 실행 */
+        }
+
+        /* 각 box의 투명도 설정, 숫자가 낮을수록 투명도 ↑ */
+        .box1 { opacity: 0.1;}
+        .box2 { opacity: 0.2;}
+        .box3 { opacity: 0.3;}
+        .box4 { opacity: 0.4;}
+        .box5 { opacity: 0.5;}
+        .box6 { opacity: 0.6;}
+        .box7 { opacity: 0.7;}
+        .box8 { opacity: 0.8;}
+        .box9 { opacity: 0.9;}
+
+        /* hover : 특정 요소에 마우스를 올렸을 때 발생하는 동작을 정의하는 css 선택자 */
+        .box:hover {                                                /* box에 hover 시 적용되는 스타일 설정 */
+            opacity: 1;                                             /* 투명도 설정, 마우스 올렸을 때 투명도 X */
+            /* width: 50px; */
+            background-color: coral;
+            transform: scale(1.1);                                  /* scale() : 가로/세로 줌을 늘리거나 줄임, 크기 1.1배 확대 */
+        }
+
+        .round {                                                    /* round 클래스에 적용되는 스타일 설정 */
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;                                      /* 상단 여백 30px, 좌우 여백 자동으로 설정 */
+            font-size: 108px;
+            color: beige;
+            background-color: darkblue;
+            text-align: center;                                     /* 텍스트 가운데 정렬 */
+            line-height: 300px;                                     /* 수직 가운데 정렬 */
+            border-radius: 100%;                                    /* 원형 모양 */
+            transition: transform 1s ease-in;                       /* transform이 발생하면 1초동안 실행, ease-in : 효과를 점점 빠르게 */
+        }
+
+        #rotateX:hover {                                            /* id가 rotateX인 요소의 hover 시 적용되는 스타일 설정 */
+            background-color: brown;                              /* 배경색 brown으로 설정 */
+            transform: rotateX(14000deg);                           /* X축으로 회전, 14000deg : X축 기준으로 약 39번 회전 */
+        }
+
+        #rotateY:hover {
+            background-color: brown;
+            transform: rotateY(14000deg);
+        }
+
+        #skew:hover {                                               /* id가 skew인 요소의 hover 시 적용되는 스타일 설정 */
+            transform: skew(30deg, 20deg);                          /* skew() : 기울이기, X축 30도, Y축 20도 기울이기 */
+        }
+
+        #skewX:hover {
+            transform: skewX(30deg);
+        }
+
+        #skewY:hover {
+            transform: skewY(30deg);
+        }
+
+        #translate:hover {
+            transform: translate(100px, 100px);                     /* translate() : 이동 효과, X축과 Y축 방향으로 100px 이동 */
+        }
+
+        /* animation을 위한 keyframe 설정
+        keyframe은 @keyframes를 통해 설정한다. */
+        @keyframes ani {
+            from { transform: translate(0,0);}                      /* 시작 위치 */
+            to { transform: translate(400px,400px)}                 /* 끝 위치 */
+        }
+
+        /* 애니메이션 효과 */
+        #ani1 {                                                     /* id가 ani1인 요소의 효과 설정 */
+            animation:ani 10s;                                      /* ani 애니메이션을 10초동안 실행*/
+        }
+
+        #ani2 {
+            /* altenate : 초기 위치로 돌아감
+            infinite : 무한 반복 */
+            animation: ani 3s alternate infinite ease-in-out
+        }
+
+        /* 사각형의 모서리를 따라 이동하는 애니메이션 */
+        @keyframes mov {                                            /* mov라는 이름의 keyframes 설정 */
+            0% {left: 0; top: 0;}                                   /* 시작되는 지점(0%) = 좌측(left) 상단(top) */
+            25% {left: 400px; top: 0;}                              /* 25% 진행되었을 때, 시작 지점 요소의 왼쪽 경계에서 400px 떨어진 위치로 이동 즉, 오른쪽으로 이동 */
+            50% {left: 400px; top: 400px;}                          /* 50% 진행되었을 때, left는 400px를 유지하고 top을 400px 하였으므로, 우측 하단으로 이동 */
+            75% {left: 0px; top: 400px;}                            /* 75% 진행되었을 때, left는 0px인 좌측으로 다시 돌아오고 top은 400px 유지, 좌측 하단으로 이동 */
+            100% {left: 0; top: 0;}                                 /* 애니메이션이 끝나는 지점(100%)에서 초기 위치로 돌아옴 */
+        }
+
+        #ani3 {                                                     /* ani3의 id를 가지는 요소의 스타일 지정*/
+            animation: mov 8s infinite ease-in-out;                 /* 8초 동안 mov keyframes를 실행, 무한반복 */
+            position: relative                                      /* relative : 원래 내가 있어야 할 위치를 기준으로 위치 지정 */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Transsition</h1>
+    <hr>
+    <div>
+        <!-- 투명도가 점점 진해지는 box -->
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+        <div class="box box8"></div>
+        <div class="box box9"></div>
+
+        <!-- 마우스 hover 시 회전 및 변형이 적용되는 원형 요소들-->
+        <div class="round" id="rotateX">A</div>
+        <div class="round" id="rotateY">B</div>
+        <div class="round" id="skew">C</div>
+        <div class="round" id="skewX">D</div>
+        <div class="round" id="skewY">E</div>
+        <div class="round" id="translate">F</div>
+
+        <!-- 애니메이션이 적용된 원형 요소들 -->
+        <div class="round" id="ani1">Ani1</div>
+        <div class="round" id="ani2">Ani2</div>
+        <div class="round" id="ani3">Ani3</div>
+    </div>
+</body>
+</html>

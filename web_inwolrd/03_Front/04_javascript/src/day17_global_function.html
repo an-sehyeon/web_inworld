@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title>Global Function</title>
+</head>
+<body>
+</body>
+<script>
+    // 1. eval : String을 그대로 실행한 후 결과가 있으면 돌려줌
+    // 사용자에게 수식을 입력받아 수행하는 계산기 만들기
+    var PPP = "장난하지마";                                                     // ppp 변수에 문자열 저장
+    var exp = prompt("난 최상의 계산기(Son)입니다. 수식을 넣어보십시오.");        // 프롬프트에 문자열 출력 + 사용자에게 수식 입력받기
+    document.write("<h3>귀하가 입력한 수식은 " + exp + "</h3>");                // 페이지 화면에 문자열 + 입력한 수식 출력
+    document.write("<h3>수많은 연산 끝에 결과가 나왔습니다.</h3>");                 
+    document.write("<h1>결과는 바로 " + eval(exp) + "<h1>");                   // 사용자가 입력한 수식의 값을 출력
+
+    // 2. parselnt : 문자열을 정수로 변환
+    var result1 = parseInt("1236");
+    var result2 = parseInt("345.3");            // 소수점 이하 버려짐, 345 출력
+                                                // 소수입력은 parseFloat
+    var result3 = parseInt("Dave the Dive");    // 숫자로 시작하지 않는 문자열 => 변환 실패, 결과는 NaN (Not a Number)
+    
+    document.write("<h1>parseInt결과 : " + result1 + "</h1>");
+    document.write("<h1>parseInt결과 : " + result2 + "</h1>");
+    document.write("<h1>parseInt결과 : " + result3 + "</h1>");
+
+    // 3. isNaN : 값이 숫자가 아닌 경우 true 반환
+    if(isNaN(result3)){                                             // result3이 숫자가 아니라면?
+        document.write("<h2>엄마 쟤 숫자 아닌거 넣었어요</h2>");      // 문자열 출력  
+    }    
+
+    // 4. isFinite : 값이 유한한 숫자인 경우 true 반환
+    if(!isFinite(result3)){                                        // ! => not, result3이 inFinite가 아니라면?
+        document.write("<h2>숫자 아니네</h2>");                     // 조건문 실행    
+    }
+
+    // 5. 동등 연산자와 일치 연산자
+    // 동등연산자(==)는 값만 비교하며 자료형을 자동으로 변환
+    if(1 == "1"){                                                     
+        document.write("숫자1과 문자'1'은 같습니다.");              // true이므로 출력
+    }
+    document.write("<br>");
+
+    // 일치연산자(===)는 값과 자료형 모두 비교
+    if(!(1 === "1"))                                              // 1은 숫자이고 "1"은 문자열이므로 false, 부정연산자(!)에 의해 조건문 실행  
+    document.write("숫자1과 문자'1'은 완벽하게 똑같진 않습니다.");
+
+</script>
+</html>

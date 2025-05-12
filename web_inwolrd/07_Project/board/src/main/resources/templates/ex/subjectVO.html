@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>시험결과</title>
+</head>
+<body>
+	<h1>시험결과([[*{tm}]])</h1>
+	<hr>
+	<!-- 
+	<h2 th:text="${kor}"></h2>
+	<h2 th:text="${math}"></h2>
+	<h2 th:text="${eng}"></h2>
+	<h2 th:text="${sum}"></h2>
+	<h2 th:text="${avg}"></h2>
+	<h2>국어 : [[${kor}]]</h2>	
+	<h2>수학 : [[${math}]]</h2>	
+	<h2>영어 : [[${eng}]]</h2>
+	-->
+	<table border="1" th:object="${vo}">
+		<tr><td>국어</td><td th:text="*{kor}"></td></tr>
+		<tr><td>영어</td><td th:text="*{eng}"></td></tr>
+		<tr><td>수학</td><td th:text="*{math}"></td></tr>
+		<tr><td>합계</td><td th:text="*{sum}"></td></tr>
+		<tr><td>평균</td><td th:text="*{avg}"></td></tr>
+	</table>	
+</body>
+</html>

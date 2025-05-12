@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>오늘의 추천곡</title>
+</head>
+<body>
+	<h1>오늘의 추천곡</h1>
+	<hr>
+	<h2 th:text="*{MyModel.title}">난 들을 음악이 없어</h2>
+	<h2 th:text="*{MyModel.artist}"></h2>
+	<h2 th:text="*{MyModel.desc}"></h2>
+	<h2 th:text="*{MyModel.price}"></h2>
+	
+	<table border="1" width="80%" style="text-align:center; ">
+		<tr>
+			<th>제목</th>
+			<th>작곡가</th>
+			<th>추천사유</th>
+		</tr>
+		<tr th:object="${MyModel}">
+			<td width="40%" th:text="*{title}"></td>
+			<td width="30%" th:text="*{artist}"></td>
+			<td width="30%" th:text="*{desc}"></td>
+		</tr>
+	</table>
+</body>
+</html>

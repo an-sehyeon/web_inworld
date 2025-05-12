@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>심리 진단 테스트</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* 질문과 선택지를 같은 줄에 배치 */
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .question-table th, .question-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .question-label {
+            text-align: left;
+            width: 40%;
+        }
+
+        .options {
+            text-align: center;
+            width: 15%;
+        }
+
+        /* 결과 그래프를 가로로 정렬하고 크기 조정 */
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        canvas {
+            width: 300px !important;
+            height: 250px !important;
+        }
+        
+        /* radio 버튼 크기 확대 */
+        input[type="radio"] {
+            transform: scale(1.5);
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<div th:replace="~{/include/header}"></div>
+<br><br><br><br><br><br>
+
+<body>
+    <h1>심리진단테스트</h1><br>
+    <hr>
+
+    <!-- 현재 로그인한 사용자의 ID를 hidden input에 저장 -->
+    <input type="hidden" id="username" th:value="${id}" />
+    <p>현재 로그인한 사용자 : <span th:text="${id}"></span></p>
+
+    <!-- 스포츠 경쟁 불안 검사 -->
+    <div id="test1">
+        <h2>스포츠 경쟁 불안 검사</h2>
+        <p>다음 문장을 읽고 현재 자신의 느낌을 문장 오른쪽에 있는 적합한 숫자에 체크하세요.</p>
+        
+        <!-- 선택 기준과 선택지를 같은 선상에 정렬 -->
+        <table class="question-table">
+            <tr>
+                <th class="question-label">질문</th>
+                <th class="options">전혀 아니다</th>
+                <th class="options">약간 그렇다</th>
+                <th class="options">상당히 그렇다</th>
+                <th class="options">아주 많이 그렇다</th>
+            </tr>
+            <tbody id="form1"></tbody>  <!-- 질문들이 자동 추가될 부분 -->
+        </table>
+
+        <hr>
+        
+        <button onclick="calculateTest1()">결과 제출</button>
+
+        <!-- 3개의 결과 그래프를 가로로 정렬 -->
+        <div class="chart-container">
+            <canvas id="barChartCognitive"></canvas>
+            <canvas id="barChartSomatic"></canvas>
+            <canvas id="barChartConfidence"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // 스포츠 경쟁 불안 검사 질문 목록
+        const questions1 = [
+            "이번 시합에 신경이 쓰인다.", "초조하다.", "마음이 가볍다.", "자신감에 대하여 의문을 갖는다.", "내 몸이 과도하게 민감해진다.",
+            "마음이 편하다.", "기량을 잘 발휘할 수 없을까 봐 걱정된다.", "몸이 긴장된다.", "자신이 있다.", "질까 봐 걱정이 된다.",
+            "속이 긴장된다.", "안심이 된다.", "압박감 때문에 답답할까 봐 걱정이 된다.", "몸이 이완된다.", "시합에 대처할 자신이 있다.",
+            "경기를 못 할까 봐 걱정이 된다.", "심장이 빨라진다.", "시합을 잘 해낼 자신이 있다.", "목표하는 바를 이룰지 걱정이 된다.", "속이 철렁한다.",
+            "정신적으로 여유가 생긴다.", "다른 사람이 내 경기를 보고 실망할까 봐 걱정된다.", "손이 끈적거린다.", "내가 목표를 달성하는 것을 상상하니까 자신 있다.", "집중을 못 할까 봐 걱정이 된다.",
+            "몸이 굳는다.", "정신적 압박을 견디어 낼 자신이 있다."
+        ];
+
+        // 3개 영역으로 구분
+        const cognitiveAnxiety = [1, 4, 7, 10, 13, 16, 19, 22, 25]; // 인지불안
+        const somaticAnxiety = [2, 5, 8, 11, 14, 17, 20, 23, 26];  	// 신체불안 (14번은 역순 처리)
+        const confidence = [3, 6, 9, 12, 15, 18, 21, 24, 27];  		// 자신감
+
+        // 테스트1 질문 자동 생성
+        const form1 = document.getElementById("form1");
+        questions1.forEach((question, index) => {
+            let qNum = index + 1;
+            let row = document.createElement("tr");
+
+            row.innerHTML = `<td class="question-label">${qNum}. ${question}</td>`;
+            
+            for (let i = 1; i <= 4; i++) {
+                row.innerHTML += `<td class="options"><input type="radio" name="q${qNum}" value="${i}"></td>`;
+            }
+
+            form1.appendChild(row);
+        });
+
+        // 결과 계산 및 서버로 데이터 전송
+        function calculateTest1() {
+            let cognitiveScore = 0;
+            let somaticScore = 0;
+            let confidenceScore = 0;
+            let responses = {};
+
+            for (let i = 1; i <= 27; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    let value = parseInt(selected.value);
+                    responses[`q${i}`] = value;
+
+                    if (i === 14) value = 5 - value;  // 신체불안 14번 문항 역순 처리
+
+                    if (cognitiveAnxiety.includes(i)) cognitiveScore += value;
+                    else if (somaticAnxiety.includes(i)) somaticScore += value;
+                    else if (confidence.includes(i)) confidenceScore += value;
+                }
+            }
+            
+            // 그래프를 갱신하도록 기존 차트를 삭제 후 생성
+            updateChart("barChartCognitive", "인지불안", cognitiveScore);
+            updateChart("barChartSomatic", "신체불안", somaticScore);
+            updateChart("barChartConfidence", "자신감", confidenceScore);
+
+            // 서버로 데이터 전송
+            saveTestResult(cognitiveScore, somaticScore, confidenceScore, responses);
+        }
+        
+        function updateChart(chartId, label, score) {
+        	const ctx = document.getElementById(chartId).getContext("2d");
+        	
+        	if (window[chartId]){
+        		window[chartId].destroy();		// 기존 차트 삭제
+        	}
+        	
+        	window[chartId] = new Chart(ctx, {
+        		type: "bar",
+        		data: {
+        			labels: [label],
+        			datasets: [{
+        				label: "점수",
+        				data: [score],
+        				backgroundColor: "rgba(75, 192, 192, 0.6)",
+        				borderColor: "rgba(75, 192, 192, 1)",
+        				borderWidth: 1
+        			}]
+        		},
+        		options: {
+        			responsive: true,
+        			scales: {
+        				y: { beginAtZero: true, max: 100 }
+        			}
+        		}
+        	});
+        }
+
+        // DB 저장을 위한 API 호출
+        function saveTestResult(cognitive, somatic, confidence, responses) {
+            let usernameElement = document.getElementById("username");
+        	let username = usernameElement ? usernameElement.value : null;
+        	
+        	console.log("가져온 username 값 : ", username);
+
+            if (!username) {
+                alert("로그인이 필요합니다.");
+                return;
+            }
+
+            let requestData = {
+                username: username,
+                testName: "스포츠 경쟁 불안 검사",
+                testResult: JSON.stringify(responses),
+                cognitiveScore: cognitive,
+                somaticScore: somatic,
+                confidenceScore: confidence,
+                totalScore: cognitive + somatic + confidence
+            };
+
+            console.log("서버로 전송할 데이터:", requestData);
+
+            fetch("/api/test-results/save", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.text())
+            .then(data => console.log("서버 응답:", data))
+            .catch(error => console.error("에러 발생:", error));
+        }
+    </script>
+</body>
+</html>

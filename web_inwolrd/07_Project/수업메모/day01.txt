@@ -1,0 +1,60 @@
+https://us06web.zoom.us/rec/share/ZzURsV_caYrOW07sygeyZO_BwZZ6RPL50dXwY-FqzEPSK0zVkBy-79-SPHUUTPe8.f-ppEpQrNcqTpVHS
+&$8QL5nR
+ 클론 코딩
+
+
+ 1. 웹 개발 프로젝트 단게
+    (1) 아이템 선정 + 팀 구성
+        - 무엇을 만들 것인가?
+        => 반드시 본인의 흥미가 있는 주제
+        - 팀원들의 역할 분담    
+            => 기능별 / 주제별 / DBA 또는 admin
+
+    (2) 기능 정의
+        - 우리 사이트는 어떤 기능들을 가지고 있는가?
+            => 처음부터 욕심내지 말 것
+
+    (3) 기술 정의
+        - 우리 사이트는 어느 기술을 사용해서 구축하는가?
+            =>  jsp? spring?
+                mariadb? oracle?
+                sql, html, css, javascript, jQuery
+                spingboot
+                naver, kakao, google login > oAuth2
+
+    (4) 웹 기획 단계
+        - 화면을 직접 디자인하는 단계(코딩 X)
+        - 개발 결과물이 없으나, 화면 구성은 이 단계에서 작성
+          1) ovenio.com (X)
+          2) figma.com
+
+    (5) 설계 (DB 설계, API 설계)
+        - 데이터 구조 => ERD 디자인
+          -> ERD Tool은 기능보다는 보기에 좋은 것
+        - API : 각 서비스 간의 통신 방식
+            ex) /getAttachList, /board/ list
+                어떤 기능을 하는지와 get/post 어떤 방식인지 
+
+    (6) 개발
+        - 실제 개발 단계
+
+    (7) 테스트
+        - 단위 테스트, 통합 테스트
+        - 부가적으로 시스템 테스트(부하) 
+            Tool : load runner
+
+    (8) 배포
+        - 소스 코드로 웹 서비스 구축
+
+    (9) 도메인 설정
+        - 도메인 관리 사이트에서 월/연 형태로 구매 가능
+
+    (10) 포트폴리오 작성
+        - 자기소개(Optional)
+        - 깃허브 주소 / 기술 블로그
+        - 기술 스택 나열
+        - 주요 프로젝트
+        - 이력
+        - 기타 사항(프로젝트별 설명)
+
+        

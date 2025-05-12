@@ -1,0 +1,92 @@
+https://us06web.zoom.us/rec/share/YPrEbP-HVvduHafvCyKQRWZvKY2d2mTAoW0vO58rKvhCh1QdxFP2vQkNSbMZnYVa.xYXVEJqnfwiHDLmW
+WV&D#Q7g
+
+1. Javascript로 HTML 요소 출력
+    - Javascript 코드로 HTML 요소를 웹 페이지에 직접 삽입하여
+      브라우저에 출력되게 할 수 있음
+
+      document.write()또는 document.writeln()
+
+      * writeln은 줄바꿈('\n') 문자가 삽입되지만
+        HTML은 줄바꿈 문자를 인식하지 않으므로 <pre> 태그를 사용하여 줄바꿈을 표현하거나
+        <br>을 직접 전달하여 줄바꿈을 구현
+
+
+2. Dialog
+    - modal or modeless
+    - modal : 다이얼로그가 닫히기 전까지는 다른 액션 불가
+    - modeless : 다이얼로그와 별도로 다른 액션 가능
+
+    - Java는 int, float, double : 고정타입의 변수
+    - Javascript는 변수의 타입이 정해져 있지 않다(가변적)
+    - var라는 키워드를 사용 (var myVariable;)
+
+    (1) alert
+         alert("메시지");
+         warning의 방식 : 정보를 display한다 -> 닫기버튼
+
+    (2) confirm
+         answer = confirm("메시지");
+         확인/취소 버튼 존재
+         사용자가 확인을 누르면 ture가 리턴
+         사용자가 취소를 누르면 false가 리턴
+
+    (3) prompt
+         result = prompt("메시지","디폴트 입력값");
+         디폴트 입력값은 안 넣어도 됨(필수값 X)
+         사용자가 입력한 값을 리턴
+         아무것도 입력하지 않고 확인을 누르면 ""이 리턴
+         취소 또는 강제로 닫으면 null이 리턴
+
+
+3. Javascript의 데이터 타입과 변수
+    
+    (1) Javascript의 식별자(이름)
+        식별자 : identifier, 변수, 상수, 함수에 붙이는 이름
+        - 1번째 글자 : 알파펫, 언더바, $
+        - 2번째 이하 글자 : 알파펫, 언더바, 숫자, $ 가능
+        - 대소문자 구분함
+        - 키워드 사용 불가
+
+    (2) 문장 구분
+        - 세미콜론(;)은 필수 요소는 아님
+        - 한 줄에 여러 개의 문장이 존재할 경우 구분자로 사용함
+
+        i = i + 1
+        j = j + 1;
+        k = k + 1; m = m + 1
+        n = n + 1 p = p + 1 => 이건 안됨
+
+    (3) 주석(comment)
+        - 한줄 주석 : //
+        - 구간 주석 : /*~~~*/
+
+    (4) 데이터 타입
+        - 숫자(number) : 43, 3.141592
+        - 논리(boolean) : true, false
+        - 문자열(string) : "안녕", "배고파",'라면'
+        - 객체 레퍼런스 타입 : 객체(object)를 가리킴
+        - undefined, null
+            1) undefined : 타입이 정해지지 않았음
+            2) null : 값이 정해지지 않았음
+
+        - 데이터 타입을 알아내는 함수(메서드) typeof()
+
+    (5) 변수의 선언
+        - var 키워드로 선언
+        - var score;
+        - var yy, mm, dd;
+        - var address = "집 없어";
+
+        - var 없이도 변수를 선언하는 것이 가능
+        age = 20;
+        정상적으로 동작하나, 만약 상단에 age라는 변수가 이미 선언되어 있다면 값이 변경되어 버린다.
+        var를 이용하여 내가 선언하였다면 오류가 발생하기 때문에 명료하게 실수를 방지할 수 있음
+        => 선언 시 가급적 var를 사용
+
+
+     (6) 지역변수(local), 전역변수(global)
+        - 변수의 사용 범위(scope) : 지역과 전역으로 나뉨
+        - var를 사용하지 않고 선언하면 무조건 global
+        - val를 사용했다면 사용한 곳이 함수 내인지 아닌지, 함수 내에서 var로 선언되면 함수가 끝나면 사라지는 local
+        - 함수 내가 아니면 global

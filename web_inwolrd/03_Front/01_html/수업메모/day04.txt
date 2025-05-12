@@ -1,0 +1,30 @@
+https://us06web.zoom.us/rec/share/Kv-eIv9mWCCYaFwO2gdXhAncTAqbPQMqXGNmaGl66sSMA7ssAKBF-Zs5Twf4y2An.DSSQN4CoTdBPknf-
+j9&rE?WY
+
+1. input 태그
+    - 사용자로부터 입력을 받기 위한 태그
+    <input> 태그이며, 닫힘 태그 없음
+
+    * 속성 리스트
+    size : 글상자의 크기
+    maxlength : 값의 최대 길이(물리적)
+    placeholder : 입력하기 전 보여주는 텍스트
+    readonly : 편집불가
+    value : 값, value에 값을 넣어놓으면 표시되며, 또한 value를 읽어오기도 한다.
+    required : 필수 항목
+
+
+    - type
+        text : 일반 텍스트
+        password : 비밀번호
+        raido : 하나만 선택 가능
+        checkbox : 여러 선택이 가능한 체크박스
+        file : 파일 전송
+        color : 색상
+        email : 이메일
+        url : http://체크
+        tel : 전화번호
+        date : 날짜
+        number(min, max, step) : 숫자 크기를 조정하는 상하버튼
+        range : 일정 범위 내의 값만 입력 가능
+        search : 검색어, 우측에 x 표시

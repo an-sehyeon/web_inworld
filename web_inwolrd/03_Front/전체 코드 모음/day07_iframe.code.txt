@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <title>iframe example</title>
+    <style>                                           /* <a> : 특정 iframe으로 이동시키는 링크로 사용 */
+        .aclass{                                      /* 페이지 스타일 설정 */
+            border: 3px dotted orchid;              /* 테두리를 3px 점선 보라색으로 설정 */   
+            background:yellow;                      /* 배경색을 노란색으로 설정 */ 
+            font-size: 72px;                          /* 텍스트 크기를 72px로 설정 */
+            text-align: center;                       /* 텍스트를 가운데 정렬 */
+            width: 80%;                               /* 너비를 페이지의 80%로 설정 */
+            margin: 0px auto;                         /* 가운데 정렬을 위해 상하 여백을 0, 좌우 여백을 자동으로 설정  */
+        }
+    </style>
+</head>
+<body>
+    <h1>iframe example</h1>
+    <hr>
+    <a target="if4" href="http://www.w3bai.com/ko/css/css3_buttons.html">      <!-- 버튼 모양의 링크 : 클릭 시 if4 프레임에서 w3bai 사이트로 이동 -->
+        CSS 버튼 학습사이트 이동                                                 <!-- 링크 버튼의 텍스트와 스타일 -->
+    </a>
+    <br><br>                                                                    <!-- iframe : 외부 콘텐츠를 현재 웹페이지에 삽입하는 역할 -->
+    <iframe name="if1" src="day06_table1.html"></iframe>                        <!-- 첫 번째 iframe : day06_table1.html 파일을 불러옴-->
+    <br>
+    <iframe name="if2" src="day06_table2.html"              
+        style="width: 100%; height: 300px;"></iframe>                           <!-- 두 번째 iframe : day06_table2.html 파일을 불러오며 100% 너비와 300% 높이를 지정 -->
+    <br>
+    <iframe name="if3" src="day06_table3.html"
+        style="width: 800px; height: 320px;"></iframe>                          <!-- 세 번째 iframe : day06_table3.html 파일을 불러오며 800px 너비와 320px 높이를 지정 -->
+    <br>
+    <iframe name="if4" src="http://www.naver.com"
+        style="width: 100%; height: 600px;"></iframe>                           <!-- 네 번째 iframe : 네이버 웹사이트를 100% 너비와 600px 높이로 표시 -->
+    <iframe name="if5" src="https://www.dcinside.com/"
+        style="width: 50%; height: 400px;"></iframe>                            <!-- 다섯 번째 iframe : 디시인사이드 사이트를 50% 너비와 400px 높이로 지정 -->
+    <iframe name="if6" src="https://www.slrclub.com/"
+        style="width: 50%; height: 400px;"></iframe>                             <!-- 여섯 번째 iframe : slrclub 사이트를 50% 너비와 400px 높이로 지정 -->
+    <br>
+    <div class="aclass">                                                        <!-- div는 .aclass라는 CSS 클래스가 적용된 컨테이너로, iframe을 중앙에 배치하고 스타일을 적용하기 위해 사용 -->
+        <!-- iframe 태그는 외부 콘텐츠(여기서는 YouTube 동영상)를 현재 웹페이지에 삽입하는 역할 -->
+        <iframe width="800" height="600"                                        
+        src="https://www.youtube.com/embed/5CsHxUdlGL4" 
+        title="나는 무도 키즈" 
+        frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>
+    </div>   
+</body>
+</html>
